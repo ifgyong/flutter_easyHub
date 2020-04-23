@@ -1,4 +1,6 @@
 # fluttereasyhub
+![](https://badgen.net/github/license/micromatch/micromatch)
+![](https://img.shields.io/pub/v/flutter_easyhub)
 
 > 一个展示toast和加载动画的 packages
 
