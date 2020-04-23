@@ -10,7 +10,6 @@
 
 ## easy use to use this package as a library
 
-
 ```
 dependencies:
   flutter_easyhub: ^*.*.*
