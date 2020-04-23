@@ -7,8 +7,20 @@
 #### android
 ![](http://blog.fgyong.cn/158760577573.GIF)
 
-## easy use
+## easy use to use this package as a library
 
+
+```
+
+
+dependencies:
+  flutter_easyhub: ^0.0.3+1
+
+$ flutter pub get
+
+import 'package:flutter_easyhub/flutter_easyhub.dart';
+
+```
 ### 初始化
 ```
 EasyHub.getInstance
