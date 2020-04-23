@@ -3,9 +3,9 @@
 > 一个展示toast和加载动画的 packages
 
 #### iOS
-![](http://blog.fgyong.cn/158760472049.GIF)
+![](iOS.GIF)
 #### android
-![](http://blog.fgyong.cn/158760577573.GIF)
+![](android.GIF)
 
 ## easy use to use this package as a library
 
@@ -14,7 +14,7 @@
 
 
 dependencies:
-  flutter_easyhub: ^0.0.3+1
+  flutter_easyhub: ^*.*.*
 
 $ flutter pub get
 
