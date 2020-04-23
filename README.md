@@ -1,17 +1,24 @@
 # fluttereasyhub
 
-一个展示toast和加载动画的 packages
+> 一个展示toast和加载动画的 packages
+
+#### iOS
 ![](http://blog.fgyong.cn/158760472049.GIF)
+#### android
+![](http://blog.fgyong.cn/158760577573.GIF)
+
 ## easy use
 
- 初始化
- ```
+### 初始化
+```
 EasyHub.getInstance
  ..setBackgroundColor(Colors.black38)
  ..setCircleBackgroundColor(Colors.lightGreen)
  ..setValueColor(new AlwaysStoppedAnimation(Colors.black38));
 ```
+
 OR
+
 ```
 
 EasyHub hub = EasyHub(
@@ -32,39 +39,47 @@ hub.dismiss_hub();
 // OR
  EasyHub.dismiddAll();
 
- ```
+```
 
- 想要隐藏所有
- ```
+### 隐藏所有
+ 
+```
  EasyHub.dismiddAll();
- ```
+```
 
- 展示文本
- ```
+### 展示文本
+ 
+```
 
  EasyHub.show(context, 'loading');
- ```
- 展示HUB
+```
+ 
+### 展示HUB
 
- ```
+```
  EasyHub.showHub(context);
- ```
- 展示文本 + hub
- ```
+ 
+```
+### 展示文本 + hub
+
+```
  EasyHub.showMsg(context, '加载文字展示');
- ```
+```
 
 
-展示错误
+### 展示错误
+
 ```
 EasyHub.showErrorHub(context, '网络错误');
 ```
-展示完成
+### 展示完成
+
 ```
 EasyHub.showComplateHub(context, '下载完成');
 ```
 
-## 具体使用例子
+### 具体使用例子
+
 ```
 import 'dart:async';
 
@@ -205,5 +220,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
 
 
