@@ -12,15 +12,12 @@
 
 
 ```
-
-
 dependencies:
   flutter_easyhub: ^*.*.*
 
 $ flutter pub get
 
 import 'package:flutter_easyhub/flutter_easyhub.dart';
-
 ```
 ### 初始化
 ```
