@@ -3,6 +3,7 @@
 ![](https://img.shields.io/pub/v/flutter_easyhub)
 
 > 一个展示toast和加载动画的 packages
+
 iOS 展示动画 --> http://blog.fgyong.cn/158760472049.GIF
 android 展示动画 --> http://blog.fgyong.cn/158760577573.GIF
 
