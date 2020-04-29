@@ -1,6 +1,8 @@
 name: flutter_easyhub
-description: easy for hub,在iOS上，在android上，简单的跨平台toast.
-version: 0.0.4+4
+description: easy for hub,
+  When you do a lot of calculation, you need this animation. When you make a network error or finish downloading files, you also need this animation。
+
+version: 0.2.0+2
 homepage: http://www.fgyong.cn
 repository: https://github.com/ifgyong/flutter_easyHub
 
