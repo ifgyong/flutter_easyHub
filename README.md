@@ -10,23 +10,23 @@
 
 |动画种类|效果|
 |:--:|:--:|
-|EasyHubIndicator_default|![](http://blog.fgyong.cn/158814311073)|
-|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/15881482663.GIF)|
-|showErrorHub|![](http://blog.fgyong.cn/158814329258.PNG)|
-|showComplateHub|![](http://blog.fgyong.cn/158814333330.PNG)|
-|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158814368944)|
-|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158814408378)|
-|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158814416823)|
-|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/15881442829)|
-|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/158814433940)|
-|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158814449365)|
-|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158814453492)|
-|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158814457242)|
-|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158814460687)|
-|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/15881446363)|
-|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/158814467327)|
-|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158814471429)|
-|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158814476540)|
+|EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) |
+|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) |
+|showErrorHub|![](http://blog.fgyong.cn/158815333758.PNG) |
+|showComplateHub|![](http://blog.fgyong.cn/158815337030.PNG) |
+|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158815342172.GIF) |
+|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158815348244.GIF) |
+|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158815353678.GIF) |
+|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/158815359123.GIF) |
+|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/15881537979.GIF) |
+|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158815385940.GIF) |
+|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158815397265.GIF)|
+|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158815401292.GIF) |
+|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158815406042.GIF) |
+|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/158815411087.GIF) |
+|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) |
+|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) |
+|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
 
 
 ## easy use to use this package as a library
