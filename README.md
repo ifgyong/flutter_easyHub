@@ -2,32 +2,31 @@
 ![](https://badgen.net/github/license/micromatch/micromatch)
 ![](https://img.shields.io/pub/v/flutter_easyhub)
 
-> 一个展示toast和加载动画的 packages
+> 一个纯粹的flutter，支持android和iOS，没有一点原生代码，更简单的loading动画，现有20多种动画，支持自定义前景色和背景色，支持动画大小调整。
 
 ## 效果展示
 
 ### 详细动画
 
-
 |动画种类|效果|
 |:--:|:--:|
-|EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) |
-|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) |
-|showErrorHub|![](http://blog.fgyong.cn/158815333758.PNG) |
-|showComplateHub|![](http://blog.fgyong.cn/158815337030.PNG) |
-|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158815342172.GIF) |
-|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158815348244.GIF) |
-|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158815353678.GIF) |
-|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/158815359123.GIF) |
-|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/15881537979.GIF) |
-|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158815385940.GIF) |
-|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158815397265.GIF)|
-|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158815401292.GIF) |
-|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158815406042.GIF) |
-|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/158815411087.GIF) |
-|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) |
-|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) |
-|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
+|EasyHubIndicator_default|![](http://blog.fgyong.cn/158814311073)|
+|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/15881482663.GIF)|
+|showErrorHub|![](http://blog.fgyong.cn/158814329258.PNG)|
+|showComplateHub|![](http://blog.fgyong.cn/158814333330.PNG)|
+|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158814368944)|
+|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158814408378)|
+|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158814416823)|
+|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/15881442829)|
+|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/158814433940)|
+|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158814449365)|
+|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158814453492)|
+|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158814457242)|
+|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158814460687)|
+|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/15881446363)|
+|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/158814467327)|
+|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158814471429)|
+|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158814476540)|
 
 
 ## easy use to use this package as a library
@@ -115,7 +114,7 @@ EasyHub.showComplateHub(context, '下载完成');
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutterdonghua/easy_hub.dart';
+import 'package:flutter_easyhub/flutter_easyhub.dart';
 
 void main() => runApp(MyApp());
 
@@ -153,20 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'error hub',
     'complate hub',
     'line',
-    'circle  easy out easy in',
-    'circle  head to tail',
-    '矩形翻转 flipingRect',
-    '心跳 beattingCircle ',
-    '单个 singlebeattingCircle',
-    '竖条 跳动 beatingRects',
-    '圆圈追逐 rotatingCircles',
-    '圆圈追逐 rotatingDeformedCircles',
-    '跳动的圆圈 rotatingDeformedCirclesRow',
-    '追逐的矩形 rotatingTwoRect',
-    '圆圈追逐 rotatingTwoCircles',
-    '折叠矩形 foldingRect'
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -194,9 +180,9 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.black12,
               alignment: Alignment.center,
               child: Text(
-                '${list[index]} ,idex:${index - 1}',
+                '${list[index]}',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 25,
                 ),
               ),
             ));
@@ -207,10 +193,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Timer t;
   void show(int index) {
-    Navigator.of(context).push(new MaterialPageRoute(
-        builder: (context) => NewPage(
-              title: 'title',
-            )));
     switch (index - 1) {
       case -1:
         EasyHub.dismiddAll();
@@ -218,40 +200,26 @@ class _MyHomePageState extends State<MyHomePage> {
       case 0:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.getInstance.setParameter(
-          background: Colors.white,
-        );
         EasyHub.show(context, '多行\nfgyong\n老师');
         break;
       case 1:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.getInstance.setParameter(background: Colors.white);
-
         EasyHub.showMsg(context, '单行哦 loading');
         break;
       case 2:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.getInstance.setParameter(background: Colors.white);
-
         EasyHub.showHub(context);
         break;
       case 3:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_CircularProgress;
-        EasyHub.getInstance.setParameter(
-            background: Colors.black38,
-            circlebackgroundColor: Colors.white.withOpacity(0.5),
-            circleValueColor: new AlwaysStoppedAnimation(Colors.white));
-
-        EasyHub.show(context, '加载中。。');
+        EasyHub.show(context, 'fgyong 公众号\nfgyong开发日记');
         break;
       case 4:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_CircularProgress;
-        EasyHub.getInstance.setParameter(background: Colors.black38);
-
         EasyHub.showMsg(
             context,
             'fgyong blog'
@@ -259,13 +227,9 @@ class _MyHomePageState extends State<MyHomePage> {
             '公众号：fgyong的开发日记 公众号：fgyong的开发日记 公众号：fgyong的开发日记');
         break;
       case 5:
-        EasyHub.getInstance.setParameter(background: Colors.black38);
-        EasyHub.getInstance.textStyle = TextStyle(
-            fontSize: 15, color: Colors.white, decoration: TextDecoration.none);
         EasyHub.showErrorHub(context, '网络错误');
         break;
       case 6:
-        EasyHub.getInstance.setParameter(background: Colors.black38);
         EasyHub.showComplateHub(context, '下载完成');
 
         break;
@@ -275,168 +239,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
         EasyHub.getInstance.setParameter(
             circleValueColor: new AlwaysStoppedAnimation(Colors.white),
-            circlebackgroundColor: Colors.black38,
-            background: Colors.black38);
-        EasyHub.show(context, '正在下载。。。');
+            circlebackgroundColor: Colors.black38);
+        EasyHub.show(context, 'fgyong\nwww.fgyong.cn');
 
-        break;
-      case 8:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_CircularProgressEasyOutEasyIn;
-
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.white),
-            circlebackgroundColor: Color.fromRGBO(180, 180, 180, 1));
-        EasyHub.showHub(context);
-        break;
-
-      case 9:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_CircularProgressEasy;
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.lightBlue),
-            circlebackgroundColor: Colors.white);
-
-        EasyHub.showHub(context);
-        break;
-
-      case 10:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_singleFlipingRect;
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.lightBlue),
-            circlebackgroundColor: Colors.white,
-            background: Color.fromRGBO(0, 0, 0, 0));
-
-        EasyHub.showHub(context);
-        break;
-      //EasyHubIndicator_circleBeat
-      case 11:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_beattingCircle;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Color.fromRGBO(1, 52, 255, 0.5)),
-            circlebackgroundColor: Colors.white,
-            background: Color.fromRGBO(0, 0, 0, 0));
-
-        EasyHub.showHub(
-          context,
-        );
-        break;
-      case 12:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_singlebeattingCircle;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.orange.withOpacity(0.7)),
-            circlebackgroundColor: Colors.orangeAccent,
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 13:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_beatingRects;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
-            circlebackgroundColor: Colors.orangeAccent,
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 14:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_rotatingCircles;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
-            circlebackgroundColor: Colors.orangeAccent,
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 15:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_rotatingDeformedCircles;
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.pinkAccent),
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 16:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_rotatingDeformedCirclesRow;
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.orangeAccent),
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 17:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_rotatingTwoRect;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 18:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_rotatingTwoCircles;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
-        break;
-      case 19:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_foldingRect;
-        EasyHub.getInstance.setParameter(
-            circleValueColor:
-                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
-            background: Color.fromRGBO(0, 0, 0, 0));
-        EasyHub.showHub(context);
         break;
     }
-
-    Future.delayed(Duration(seconds: 25)).then((v) {
-//      EasyHub.dismiddAll();
-//      Navigator.of(context).pop();
+    Future.delayed(Duration(seconds: 2)).then((v) {
+      EasyHub.dismiddAll();
     });
   }
-
-  double v = 0;
 }
-
-class NewPage extends StatefulWidget {
-  NewPage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _NewPage createState() => _NewPage();
-}
-
-class _NewPage extends State<NewPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: WillPopScope(
-          child: Container(
-            color: Colors.white,
-          ),
-          // ignore: missing_return
-          onWillPop: () async {
-            EasyHub.dismiddAll();
-            return true;
-          }),
-    );
-  }
-}
-
 ```
 
 
