@@ -11,23 +11,23 @@
 
 |动画种类|效果|
 |:--:|:--:|
-|EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) ![](./images/1.gif)|
-|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) ![](./images/2.gif)|
-|showErrorHub|![](http://blog.fgyong.cn/158815333758.PNG) ![](./images/3.png)|
-|showComplateHub|![](http://blog.fgyong.cn/158815337030.PNG) ![](./images/4.png)|
-|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158815342172.GIF) ![](./images/5.gif)|
-|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158815348244.GIF) ![](./images/6.gif)|
-|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158815353678.GIF) ![](./images/7.gif)|
-|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/158815359123.GIF) ![](./images/8.gif)|
-|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/15881537979.GIF) ![](./images/9.gif)|
-|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158815385940.GIF) ![](./images/10.gif)|
-|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158815397265.GIF) ![](./images/11.gif)|
-|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158815401292.GIF) ![](./images/12.gif)|
-|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158815406042.GIF) ![](./images/13.gif)|
-|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/158815411087.GIF) ![](./images/14.gif)|
-|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) ![](./images/15.gif)|
-|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) ![](./images/16.gif)|
-|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF)  ![](./images/17.gif)|
+|EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) |
+|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) |
+|showErrorHub|![](http://blog.fgyong.cn/158815333758.PNG) |
+|showComplateHub|![](http://blog.fgyong.cn/158815337030.PNG) |
+|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158815342172.GIF) |
+|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158815348244.GIF) |
+|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158815353678.GIF) |
+|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/158815359123.GIF) |
+|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/15881537979.GIF) |
+|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158815385940.GIF) |
+|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158815397265.GIF)|
+|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158815401292.GIF) |
+|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158815406042.GIF) |
+|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/158815411087.GIF) |
+|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) |
+|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) |
+|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
 
 
 ## easy use to use this package as a library
