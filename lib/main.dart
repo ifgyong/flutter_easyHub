@@ -67,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '跳动的圆圈 rotatingDeformedCirclesRow',
     '追逐的矩形 rotatingTwoRect',
     '圆圈追逐 rotatingTwoCircles',
-    '折叠矩形 foldingRect'
+    '折叠矩形 foldingRect',
+    '摆钟'
   ];
   /*
   *  EasyHubIndicator_singleFlipingRect, //单个矩形翻转动画
@@ -312,6 +313,15 @@ class _MyHomePageState extends State<MyHomePage> {
             circleValueColor:
                 new AlwaysStoppedAnimation(Colors.lightBlueAccent),
             background: Color.fromRGBO(0, 0, 0, 0));
+        EasyHub.showHub(context);
+        break;
+      case 20:
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_swingingBall;
+        EasyHub.getInstance.setParameter(
+            circleValueColor:
+                new AlwaysStoppedAnimation(Colors.lightBlueAccent),
+            background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);
         break;
     }

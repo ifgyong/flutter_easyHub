@@ -27,6 +27,7 @@
 |EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) |
 |EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) |
 |EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
+|EasyHubIndicator_swingingBall|![](http://blog.fgyong.cn/158823236312.GIF)|
 
 
 ## easy use to use this package as a library
