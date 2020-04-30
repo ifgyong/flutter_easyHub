@@ -29,7 +29,7 @@ class _EasySwingingBall extends State<EasySwingingBall>
         vsync: this,
         duration: Duration(milliseconds: 1000),
         lowerBound: 0,
-        upperBound: 1)
+        upperBound: 1.0)
       ..addStatusListener((s) {
         if (s == AnimationStatus.completed) {
           _animationController.reverse();
@@ -39,7 +39,7 @@ class _EasySwingingBall extends State<EasySwingingBall>
       })
       ..forward();
     _curvedAnimation = new CurvedAnimation(
-        parent: _animationController, curve: Curves.easeInOutQuart);
+        parent: _animationController, curve: Curves.easeInOut);
     _animation = new Tween(begin: 0.0, end: 1.0).animate(_curvedAnimation);
 
     super.initState();
@@ -56,7 +56,7 @@ class _EasySwingingBall extends State<EasySwingingBall>
           painter: EasySwingingBallPainter(
               color: widget.color == null ? Colors.lightBlue : widget.color,
               radius: radius,
-              value: _curvedAnimation.value,
+              value: _animation.value,
               colors: widget.colors,
               stops: widget.stops),
           size: Size(20, 20),
@@ -106,27 +106,33 @@ class EasySwingingBallPainter extends CustomPainter {
           gradient.createShader(Rect.fromLTWH(0, 0, radius * 28, radius * 6));
     }
 
-//    canvas.drawCircle(Offset(x, y), radius, _paint);
-    canvas.drawCircle(Offset(x - radius, y), radius, _paint);
-    canvas.drawCircle(Offset(x + radius, y), radius, _paint);
-    canvas.drawCircle(Offset(x - radius * 3, y), radius, _paint);
-    canvas.drawCircle(Offset(x + radius * 3, y), radius, _paint);
-    canvas.drawCircle(Offset(x + radius * 5, y), radius, _paint);
-    canvas.drawCircle(Offset(x - radius * 5, y), radius, _paint);
-    double xl = (x - radius * 7);
+    double x1 = x - radius * 3;
+    double x2 = x - radius;
+    double x3 = x + radius;
+    double x4 = x + radius * 3;
+
+    double xl = (x - radius * 5);
     double yl = y;
     if (value < 0.5) {
+      value *= 0.75;
+      value += 0.125; // 0.175-->0.5
       xl -= (radius * 5) * cos(value * pi);
-      yl *= sin(value * pi);
+      yl *= sin(pi * value);
     }
-    double xr = (x + radius * 7);
+    double xr = (x + radius * 5);
     double yr = y;
     if (value >= 0.5) {
       value -= 0.5;
-      xr += (radius * 5) * sin(value * pi);
-      yr *= cos(value * pi);
+      value *= 0.75; //0π--0.375π
+      //0.5 -- 0.875
+      xr += (radius * 5) * sin((value + 0.125) * pi);
+//弧度结束的 0.5π--0.875π
+      yr *= sin((value + 0.5) * pi);
     }
-
+    canvas.drawCircle(Offset(x1, y), radius, _paint);
+    canvas.drawCircle(Offset(x2, y), radius, _paint);
+    canvas.drawCircle(Offset(x3, y), radius, _paint);
+    canvas.drawCircle(Offset(x4, y), radius, _paint);
     canvas.drawCircle(Offset(xl, yl), radius, _paint);
     canvas.drawCircle(Offset(xr, yr), radius, _paint);
   }
