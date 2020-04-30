@@ -30,7 +30,7 @@
 |EasyHubIndicator_swingingBall|![](http://blog.fgyong.cn/158823236312.GIF)|
 
 
-### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳
+### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳!!
 ## easy use to use this package as a library
 
 ```
