@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyhub/animation/easy_swinging_ball.dart';
+import 'package:flutter_easyhub/animation/easy_waves.dart';
 import 'animation/easy_beating_rects.dart';
 import 'animation/easy_fliping_rect.dart';
 import 'animation/easy_folding_rect.dart';
@@ -44,6 +45,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_rotatingTwoCircles, //两个圆追逐
   EasyHubIndicator_foldingRect, //折叠矩形
   EasyHubIndicator_swingingBall, //摆钟
+  EasyHubIndicator_waves, //波浪
 
 }
 
@@ -422,14 +424,17 @@ class EasyHub {
         break;
       case EasyHubIndicatorType.EasyHubIndicator_swingingBall:
         _indicator = Container(
-//              width: 80,
-//              height: 80,
-//              color: Colors.black38,
           child: EasySwingingBall(
             color: Colors.amber.withOpacity(0.8),
             colors: [Colors.blueGrey, Colors.red, Colors.lightGreen],
             radius: 5,
           ),
+        );
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_waves:
+        _indicator = EasyWaving(
+          radius: 30,
+          isHidenProgress: true,
         );
         break;
     }
