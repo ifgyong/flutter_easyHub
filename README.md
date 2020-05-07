@@ -29,6 +29,7 @@
 |EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
 |EasyHubIndicator_swingingBall|![](http://blog.fgyong.cn/158823236312.GIF)|
 |EasyHubIndicator_waves|![](http://blog.fgyong.cn/158874617749.GIF)|
+|EasyHubIndicator_spitBubbles|![](http://blog.fgyong.cn/158884280749.GIF)|
 
 
 ### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳!!

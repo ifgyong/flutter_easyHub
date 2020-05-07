@@ -69,23 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
     '圆圈追逐 rotatingTwoCircles',
     '折叠矩形 foldingRect',
     '摆钟',
-    '波浪'
+    '波浪',
+    '水球'
   ];
-  /*
-  *  EasyHubIndicator_singleFlipingRect, //单个矩形翻转动画
-  EasyHubIndicator_beatingRects, //竖条跳动
-  EasyHubIndicator_beattingCircle, //心跳圆圈
-  EasyHubIndicator_singlebeattingCircle, //心跳圆圈
-  EasyHubIndicator_rotatingCircles, //圆圈追逐
-
-  EasyHubIndicator_rotatingDeformedCircles, //圆圈追逐 变形哦
-
-  EasyHubIndicator_rotatingDeformedCirclesRow, //一排三个圆圈跳动
-
-  EasyHubIndicator_rotatingTwoRect, //两个矩形追逐
-  EasyHubIndicator_rotatingTwoCircles, //两个圆追逐
-  EasyHubIndicator_foldingRect, //折叠矩形
-  * */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -328,6 +314,14 @@ class _MyHomePageState extends State<MyHomePage> {
       case 21:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_waves;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: new AlwaysStoppedAnimation(Colors.lightBlue),
+            background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 22: //💧
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_spitBubbles;
         EasyHub.getInstance.setParameter(
             circleValueColor: new AlwaysStoppedAnimation(Colors.lightBlue),
             background: Color.fromRGBO(0, 0, 1, 0));
