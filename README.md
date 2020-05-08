@@ -31,6 +31,7 @@
 |EasyHubIndicator_waves|![](http://blog.fgyong.cn/158874617749.GIF)|
 |EasyHubIndicator_spitBubbles|![](http://blog.fgyong.cn/158884280749.GIF)|
 |EasyHubIndicator_movingCube|![](http://blog.fgyong.cn/15889160117.GIF)|
+|EasyHubIndicator_rotatingTwoColorBall|![](http://blog.fgyong.cn/158892703673.GIF)|
 
 
 ### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳!!
@@ -255,9 +256,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-### 0.2.4 2020.05.08
+### 0.2.5 2020.05.08
 > 添加正方体移动效果
-
+> 添加魔球旋转效果
 
 ### 0.2.3 2020.05.07
 > 添加水滴
