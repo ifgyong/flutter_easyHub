@@ -13,6 +13,8 @@ class EasyBeattingCircles extends StatefulWidget {
   /// single 是否单个
   /// color 颜色
   /// radius 半径
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   _EasyBeattingCircles createState() => _EasyBeattingCircles();
 }
 

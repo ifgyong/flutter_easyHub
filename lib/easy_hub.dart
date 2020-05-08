@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/animation/easy_moving_cube.dart';
 import 'package:flutter_easyhub/animation/easy_spit_bubbles.dart';
 import 'package:flutter_easyhub/animation/easy_swinging_ball.dart';
 import 'package:flutter_easyhub/animation/easy_waves.dart';
@@ -48,6 +49,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_swingingBall, //摆钟
   EasyHubIndicator_waves, //波浪
   EasyHubIndicator_spitBubbles, //水球 滴水
+  EasyHubIndicator_movingCube, //正方体解体
 
 }
 
@@ -442,6 +444,11 @@ class EasyHub {
       case EasyHubIndicatorType.EasyHubIndicator_spitBubbles: //水球滴水
         _indicator = EasySplitBubbles(
           radius: 15,
+        );
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_movingCube: //水球滴水
+        _indicator = EasyMovingCube(
+          width: 15,
         );
         break;
     }

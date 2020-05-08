@@ -10,6 +10,8 @@ class EasyRotatingCircle extends StatefulWidget {
   /// 追踪的两个圆
   /// color 颜色
   /// radius 半径
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasyRotatingCircle({Key key, this.color, this.radius}) : super(key: key);
   _EasyRotatingCircle createState() => _EasyRotatingCircle();
 }

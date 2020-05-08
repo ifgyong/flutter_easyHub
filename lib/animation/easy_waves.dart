@@ -18,6 +18,7 @@ class EasyWaving extends StatefulWidget {
   ///  bool isHidenProgress;//隐藏文字
   ///  Color color; //波浪颜色
   ///  Color circleColor; //圆圆颜色
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
   EasyWaving(
       {Key key,
       this.progress,

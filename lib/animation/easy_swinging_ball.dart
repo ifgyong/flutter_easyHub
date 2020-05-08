@@ -13,6 +13,8 @@ class EasySwingingBall extends StatefulWidget {
   /// Color color; //默认颜色 单色
   /// List<Color> colors; // 渐变色 如果stops 有值必须和colors长度相等
   /// List<double> stops; //shader 的 每个颜色的范围 ，每个值在0.0和1.0之间
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasySwingingBall({Key key, this.radius, this.color, this.colors, this.stops})
       : super(key: key);
   _EasySwingingBall createState() => _EasySwingingBall();

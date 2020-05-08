@@ -6,6 +6,7 @@ class EasyBeatingRects extends StatefulWidget {
   /// margin 间隔
   /// rectHeight 矩形高度
   /// rectWidth 矩形宽度
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
   EasyBeatingRects(
       {Key key, this.color, this.margin, this.rectHeight, this.rectWidth})
       : super(key: key);

@@ -10,6 +10,8 @@ class EasyFoldingRect extends StatefulWidget {
   ///折叠矩形动画
   /// Color 矩形颜色 最好加入半透明的元素，效果更好
   /// width 矩形直径
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasyFoldingRect({Key key, this.color, this.width}) : super(key: key);
   _EasyFoldingRect createState() => _EasyFoldingRect();
 }

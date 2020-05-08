@@ -70,7 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '折叠矩形 foldingRect',
     '摆钟',
     '波浪',
-    '水球'
+    '水球',
+    '正方体解体合体😯'
   ];
   @override
   Widget build(BuildContext context) {
@@ -325,6 +326,13 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.getInstance.setParameter(
             circleValueColor: new AlwaysStoppedAnimation(Colors.lightBlue),
             background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 23: //💧
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_movingCube;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);
         break;
     }

@@ -11,6 +11,8 @@ class EasyRotatingCircles extends StatefulWidget {
   /// color cirlce 颜色
   /// isSmaller 是否随着转圈而变小
   /// isLine 是否是线性的
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasyRotatingCircles({Key key, this.color, this.isSmaller, this.isLine})
       : super(key: key);
   _EasyRotatingCircles createState() => _EasyRotatingCircles();

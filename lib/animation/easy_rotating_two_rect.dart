@@ -16,6 +16,8 @@ class EasyRotatingTwoRect extends StatefulWidget {
   /// 追逐的矩形
   /// List 矩形的颜色 最好设置2个颜色
   /// width 矩形宽度
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasyRotatingTwoRect({Key key, this.colors, this.width}) : super(key: key);
   _EasyRotatingTwoRect createState() => _EasyRotatingTwoRect();
 }

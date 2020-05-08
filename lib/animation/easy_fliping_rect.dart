@@ -8,6 +8,8 @@ class EasyFlipingRect extends StatefulWidget {
   /// 自定义颜色 和大小
   /// color 颜色
   /// size 翻转矩形大小
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
+
   EasyFlipingRect({Key key, this.color, this.size}) : super(key: key);
   final Color color;
   final Size size;

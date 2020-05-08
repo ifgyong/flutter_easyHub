@@ -9,6 +9,7 @@ class EasySplitBubbles extends StatefulWidget {
   double radius; //半径
   /// 💧掉落效果 支持随机方向
   /// bool alwaysChangeDir; //总是调换方向
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
   EasySplitBubbles({Key key, this.alwaysChangeDir, this.color, this.radius})
       : super(key: key);
   _EasySplitBubbles createState() => _EasySplitBubbles();
