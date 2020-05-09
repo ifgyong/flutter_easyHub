@@ -8,40 +8,13 @@
 
 ### 详细动画
 
-<!--|动画种类|效果|
-|:--:|:--:|
-|EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) |
-|EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) |
-|showErrorHub|![](http://blog.fgyong.cn/158815333758.PNG) |
-|showComplateHub|![](http://blog.fgyong.cn/158815337030.PNG) |
-|EasyHubIndicator_LineProgress|![](http://blog.fgyong.cn/158815342172.GIF) |
-|EasyHubIndicator_CircularProgressEasyOutEasyIn|![](http://blog.fgyong.cn/158815348244.GIF) |
-|EasyHubIndicator_CircularProgressEasy|![](http://blog.fgyong.cn/158815353678.GIF) |
-|EasyHubIndicator_singleFlipingRect|![](http://blog.fgyong.cn/158815359123.GIF) |
-|EasyHubIndicator_beattingCircle|![](http://blog.fgyong.cn/15881537979.GIF) |
-|EasyHubIndicator_singlebeattingCircle|![](http://blog.fgyong.cn/158815385940.GIF) |
-|EasyHubIndicator_beatingRects|![](http://blog.fgyong.cn/158815397265.GIF)|
-|EasyHubIndicator_rotatingCircles|![](http://blog.fgyong.cn/158815401292.GIF) |
-|EasyHubIndicator_rotatingDeformedCircles|![](http://blog.fgyong.cn/158815406042.GIF) |
-|EasyHubIndicator_rotatingDeformedCirclesRow|![](http://blog.fgyong.cn/158815411087.GIF) |
-|EasyHubIndicator_rotatingTwoRect|![](http://blog.fgyong.cn/15881541753.GIF) |
-|EasyHubIndicator_rotatingTwoCircles|![](http://blog.fgyong.cn/158815421527.GIF) |
-|EasyHubIndicator_foldingRect|![](http://blog.fgyong.cn/158815425129.GIF) |
-|EasyHubIndicator_swingingBall|![](http://blog.fgyong.cn/158823236312.GIF)|
-|EasyHubIndicator_waves|![](http://blog.fgyong.cn/158874617749.GIF)|
-|EasyHubIndicator_spitBubbles|![](http://blog.fgyong.cn/158884280749.GIF)|
-|EasyHubIndicator_movingCube|![](http://blog.fgyong.cn/15889160117.GIF)|
-|EasyHubIndicator_rotatingTwoColorBall|![](http://blog.fgyong.cn/158892703673.GIF)|-->
-
-
-
 
 |![](http://blog.fgyong.cn/15881531447.GIF) default |![](http://blog.fgyong.cn/158815327673.GIF) CircularProgress|![](http://blog.fgyong.cn/158815333758.PNG) showErrorHub| ![](http://blog.fgyong.cn/158815337030.PNG) showComplateHub |![](http://blog.fgyong.cn/158815342172.GIF) LineProgress |
 |:-:|:-:|:-:|:-:|:-:|
 |![](http://blog.fgyong.cn/158815348244.GIF) CircularProgressEasyOutEasyIn |![](http://blog.fgyong.cn/158815353678.GIF) CircularProgressEasy |![](http://blog.fgyong.cn/158815359123.GIF) singleFlipingRect |![](http://blog.fgyong.cn/15881537979.GIF) beattingCircle |![](http://blog.fgyong.cn/158815385940.GIF) singlebeattingCircle |
 ![](http://blog.fgyong.cn/158815397265.GIF) beatingRects |![](http://blog.fgyong.cn/158815401292.GIF) rotatingCircles |![](http://blog.fgyong.cn/158815406042.GIF) rotatingDeformedCircles |![](http://blog.fgyong.cn/15881541753.GIF) rotatingTwoRect |![](http://blog.fgyong.cn/158815421527.GIF) rotatingTwoCircles |
 |![](http://blog.fgyong.cn/158815425129.GIF) foldingRect |![](http://blog.fgyong.cn/158823236312.GIF) swingingBall |![](http://blog.fgyong.cn/158874617749.GIF) waves |![](http://blog.fgyong.cn/158884280749.GIF) spitBubbles |![](http://blog.fgyong.cn/15889160117.GIF) movingCube |
-|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF) dancingBalls|![](http://blog.fgyong.cn/158900524872.GIF) flashingBalls|
+|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF) dancingBalls|![](http://blog.fgyong.cn/158900524872.GIF) flashingBalls|![](http://blog.fgyong.cn/158901278244.GIF)fallingBall|
 
 
 
@@ -53,7 +26,7 @@
 
 ```
 dependencies:
-    flutter_easyhub: ^0.2.6
+    flutter_easyhub: ^0.2.8
 
 $ flutter pub get
 
@@ -270,10 +243,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-### 0.2.6 2020.05.09
+### 0.2.8 2020.05.09
 > 添加正方体移动效果
 > 添加魔球旋转效果
 > 添加跳舞的4个小球效果
+> 添加闪烁的九饼
+> 添加掉落的小球动画
 
 ### 0.2.3 2020.05.07
 > 添加水滴

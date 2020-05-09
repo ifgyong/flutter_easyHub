@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
+import 'package:flutter_easyhub/animation/easy_falling_ball.dart';
 import 'package:flutter_easyhub/animation/easy_flashing_circles.dart';
 import 'package:flutter_easyhub/animation/easy_moving_cube.dart';
 import 'package:flutter_easyhub/animation/easy_rotating_two_color_circles.dart';
@@ -56,6 +57,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_rotatingTwoColorBall, //旋转的魔球
   EasyHubIndicator_dancingBalls, //跳动的魔球
   EasyHubIndicator_flashingBalls, //跳动的九饼
+  EasyHubIndicator_fallingBall, //掉落的小球
 }
 
 class EasyHub {
@@ -471,6 +473,14 @@ class EasyHub {
           radius: 10,
           color: EasyHub.getInstance.circleValueColor == null
               ? Colors.pinkAccent
+              : EasyHub.getInstance.circleValueColor.value,
+        );
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_fallingBall: //掉落的小球
+        _indicator = EasyFallingBall(
+          radius: 10,
+          color: EasyHub.getInstance.circleValueColor == null
+              ? Colors.orange
               : EasyHub.getInstance.circleValueColor.value,
         );
         break;
