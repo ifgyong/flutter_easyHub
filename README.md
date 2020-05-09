@@ -8,7 +8,7 @@
 
 ### 详细动画
 
-|动画种类|效果|
+<!--|动画种类|效果|
 |:--:|:--:|
 |EasyHubIndicator_default|![](http://blog.fgyong.cn/15881531447.GIF) |
 |EasyHubIndicator_CircularProgress|![](http://blog.fgyong.cn/158815327673.GIF) |
@@ -31,7 +31,22 @@
 |EasyHubIndicator_waves|![](http://blog.fgyong.cn/158874617749.GIF)|
 |EasyHubIndicator_spitBubbles|![](http://blog.fgyong.cn/158884280749.GIF)|
 |EasyHubIndicator_movingCube|![](http://blog.fgyong.cn/15889160117.GIF)|
-|EasyHubIndicator_rotatingTwoColorBall|![](http://blog.fgyong.cn/158892703673.GIF)|
+|EasyHubIndicator_rotatingTwoColorBall|![](http://blog.fgyong.cn/158892703673.GIF)|-->
+
+
+
+
+|![](http://blog.fgyong.cn/15881531447.GIF) default |![](http://blog.fgyong.cn/158815327673.GIF) CircularProgress|![](http://blog.fgyong.cn/158815333758.PNG) showErrorHub| ![](http://blog.fgyong.cn/158815337030.PNG) showComplateHub |
+|:-:|:-:|:-:|:-:|
+|![](http://blog.fgyong.cn/158815342172.GIF) LineProgress |![](http://blog.fgyong.cn/158815348244.GIF) CircularProgressEasyOutEasyIn |![](http://blog.fgyong.cn/158815353678.GIF) CircularProgressEasy |![](http://blog.fgyong.cn/158815359123.GIF) singleFlipingRect |
+|![](http://blog.fgyong.cn/15881537979.GIF) beattingCircle |![](http://blog.fgyong.cn/158815385940.GIF) singlebeattingCircle |![](http://blog.fgyong.cn/158815397265.GIF) beatingRects |![](http://blog.fgyong.cn/158815401292.GIF) rotatingCircles |
+|![](http://blog.fgyong.cn/158815406042.GIF) rotatingDeformedCircles |![](http://blog.fgyong.cn/15881541753.GIF) rotatingTwoRect |![](http://blog.fgyong.cn/158815421527.GIF) rotatingTwoCircles |![](http://blog.fgyong.cn/158815425129.GIF) foldingRect |
+|![](http://blog.fgyong.cn/158823236312.GIF) swingingBall |![](http://blog.fgyong.cn/158874617749.GIF) waves |![](http://blog.fgyong.cn/158884280749.GIF) spitBubbles |![](http://blog.fgyong.cn/15889160117.GIF) movingCube |
+|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF)|
+
+
+
+
 
 
 ### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳!!
@@ -39,7 +54,7 @@
 
 ```
 dependencies:
-  flutter_easyhub: ^*.*.*
+    flutter_easyhub: ^0.2.6
 
 $ flutter pub get
 
@@ -256,9 +271,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-### 0.2.5 2020.05.08
+### 0.2.6 2020.05.09
 > 添加正方体移动效果
 > 添加魔球旋转效果
+> 添加跳舞的4个小球效果
 
 ### 0.2.3 2020.05.07
 > 添加水滴
