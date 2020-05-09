@@ -73,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '水球',
     '正方体解体合体😯',
     '旋转的魔球',
-    '跳动的魔球'
+    '跳动的魔球',
+    '闪烁的九饼'
   ];
   @override
   Widget build(BuildContext context) {
@@ -347,6 +348,13 @@ class _MyHomePageState extends State<MyHomePage> {
       case 25: //跳动的魔球
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_dancingBalls;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 26: //跳动的九饼
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_flashingBalls;
         EasyHub.getInstance.setParameter(
             circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);
