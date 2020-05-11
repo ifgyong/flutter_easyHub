@@ -14,7 +14,7 @@
 |![](http://blog.fgyong.cn/158815348244.GIF) CircularProgressEasyOutEasyIn |![](http://blog.fgyong.cn/158815353678.GIF) CircularProgressEasy |![](http://blog.fgyong.cn/158815359123.GIF) singleFlipingRect |![](http://blog.fgyong.cn/15881537979.GIF) beattingCircle |![](http://blog.fgyong.cn/158815385940.GIF) singlebeattingCircle |
 ![](http://blog.fgyong.cn/158815397265.GIF) beatingRects |![](http://blog.fgyong.cn/158815401292.GIF) rotatingCircles |![](http://blog.fgyong.cn/158815406042.GIF) rotatingDeformedCircles |![](http://blog.fgyong.cn/15881541753.GIF) rotatingTwoRect |![](http://blog.fgyong.cn/158815421527.GIF) rotatingTwoCircles |
 |![](http://blog.fgyong.cn/158815425129.GIF) foldingRect |![](http://blog.fgyong.cn/158823236312.GIF) swingingBall |![](http://blog.fgyong.cn/158874617749.GIF) waves |![](http://blog.fgyong.cn/158884280749.GIF) spitBubbles |![](http://blog.fgyong.cn/15889160117.GIF) movingCube |
-|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF) dancingBalls|![](http://blog.fgyong.cn/158900524872.GIF) flashingBalls|![](http://blog.fgyong.cn/158901278244.GIF)fallingBall|
+|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF) dancingBalls|![](http://blog.fgyong.cn/158900524872.GIF) flashingBalls|![](http://blog.fgyong.cn/158901278244.GIF)fallingBall|![](http://blog.fgyong.cn/158918028678.GIF)hourglass|
 
 
 
@@ -26,7 +26,7 @@
 
 ```
 dependencies:
-    flutter_easyhub: ^0.2.8
+    flutter_easyhub: ^0.2.9
 
 $ flutter pub get
 
