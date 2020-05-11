@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
+import 'package:flutter_easyhub/animation/easy_dancing_cube.dart';
 import 'package:flutter_easyhub/animation/easy_falling_ball.dart';
 import 'package:flutter_easyhub/animation/easy_flashing_circles.dart';
 import 'package:flutter_easyhub/animation/easy_hourglass_timer.dart';
@@ -60,6 +61,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_flashingBalls, //跳动的九饼
   EasyHubIndicator_fallingBall, //掉落的小球
   EasyHubIndicator_hourglass, //沙漏
+  EasyHubIndicator_dancingCube, //跳动的矩形
 }
 
 class EasyHub {
@@ -492,6 +494,12 @@ class EasyHub {
           color: EasyHub.getInstance.circleValueColor == null
               ? Colors.orange
               : EasyHub.getInstance.circleValueColor.value,
+        );
+        break;
+
+      case EasyHubIndicatorType.EasyHubIndicator_dancingCube: //矩形跳舞
+        _indicator = EasyDancingCube(
+          radius: 12,
         );
         break;
     }
