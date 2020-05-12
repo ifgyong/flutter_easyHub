@@ -77,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '闪烁的九饼',
     '掉落的小球',
     '沙漏',
-    '跳动矩形'
+    '跳动矩形',
+    '游泳的小球'
   ];
   @override
   Widget build(BuildContext context) {
@@ -311,7 +312,7 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 20:
         EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_swingingBall;
+            EasyHubIndicatorType.EasyHubIndicator_pendulumingBall;
         EasyHub.getInstance.setParameter(
             circleValueColor:
                 new AlwaysStoppedAnimation(Colors.lightBlueAccent),
@@ -379,6 +380,13 @@ class _MyHomePageState extends State<MyHomePage> {
       case 29: //矩形加速减速
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_dancingCube;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 30: //矩形加速减速
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_swingingBall;
         EasyHub.getInstance.setParameter(
             circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);

@@ -170,4 +170,10 @@ class _EasyRotatingTwoColorCircles extends State<EasyRotatingTwoColorCircles>
     );
     return builder;
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }

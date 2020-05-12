@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class EasySwingingBall extends StatefulWidget {
+class EasyPendulumBall extends StatefulWidget {
   final double radius; //小球半径
   final Color color; //默认颜色 单色
   final List<Color> colors; // 渐变色 如果stops 有值必须和colors长度相等
@@ -15,12 +15,12 @@ class EasySwingingBall extends StatefulWidget {
   /// List<double> stops; //shader 的 每个颜色的范围 ，每个值在0.0和1.0之间
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
 
-  EasySwingingBall({Key key, this.radius, this.color, this.colors, this.stops})
+  EasyPendulumBall({Key key, this.radius, this.color, this.colors, this.stops})
       : super(key: key);
-  _EasySwingingBall createState() => _EasySwingingBall();
+  _EasyPendulumBall createState() => _EasyPendulumBall();
 }
 
-class _EasySwingingBall extends State<EasySwingingBall>
+class _EasyPendulumBall extends State<EasyPendulumBall>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animation;

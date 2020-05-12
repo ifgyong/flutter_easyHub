@@ -10,7 +10,8 @@ import 'package:flutter_easyhub/animation/easy_hourglass_timer.dart';
 import 'package:flutter_easyhub/animation/easy_moving_cube.dart';
 import 'package:flutter_easyhub/animation/easy_rotating_two_color_circles.dart';
 import 'package:flutter_easyhub/animation/easy_spit_bubbles.dart';
-import 'package:flutter_easyhub/animation/easy_swinging_ball.dart';
+import 'package:flutter_easyhub/animation/easy_pendulum_ball.dart';
+import 'package:flutter_easyhub/animation/easy_swimming_ball.dart';
 import 'package:flutter_easyhub/animation/easy_waves.dart';
 import 'animation/easy_beating_rects.dart';
 import 'animation/easy_fliping_rect.dart';
@@ -52,7 +53,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_rotatingTwoRect, //两个矩形追逐
   EasyHubIndicator_rotatingTwoCircles, //两个圆追逐
   EasyHubIndicator_foldingRect, //折叠矩形
-  EasyHubIndicator_swingingBall, //摆钟
+  EasyHubIndicator_pendulumingBall, //摆钟
   EasyHubIndicator_waves, //波浪
   EasyHubIndicator_spitBubbles, //水球 滴水
   EasyHubIndicator_movingCube, //正方体解体
@@ -62,6 +63,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_fallingBall, //掉落的小球
   EasyHubIndicator_hourglass, //沙漏
   EasyHubIndicator_dancingCube, //跳动的矩形
+  EasyHubIndicator_swingingBall, //跳动的小球
 }
 
 class EasyHub {
@@ -437,9 +439,9 @@ class EasyHub {
           colors: [this.circleValueColor?.value, this.circleValueColor?.value],
         );
         break;
-      case EasyHubIndicatorType.EasyHubIndicator_swingingBall:
+      case EasyHubIndicatorType.EasyHubIndicator_pendulumingBall:
         _indicator = Container(
-          child: EasySwingingBall(
+          child: EasyPendulumBall(
             color: Colors.amber.withOpacity(0.8),
             colors: [Colors.blueGrey, Colors.red, Colors.lightGreen],
             radius: 5,
@@ -500,6 +502,12 @@ class EasyHub {
       case EasyHubIndicatorType.EasyHubIndicator_dancingCube: //矩形跳舞
         _indicator = EasyDancingCube(
           radius: 12,
+        );
+        break;
+
+      case EasyHubIndicatorType.EasyHubIndicator_swingingBall: //有用的蝌蚪
+        _indicator = EasySwimmingBall(
+          radius: 8,
         );
         break;
     }
