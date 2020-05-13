@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/animation/easy_creeping_bug.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_cube.dart';
 import 'package:flutter_easyhub/animation/easy_falling_ball.dart';
@@ -64,6 +65,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_hourglass, //沙漏
   EasyHubIndicator_dancingCube, //跳动的矩形
   EasyHubIndicator_swingingBall, //跳动的小球
+  EasyHubIndicator_creepingBug, //跳动的虫子
 }
 
 class EasyHub {
@@ -508,6 +510,12 @@ class EasyHub {
       case EasyHubIndicatorType.EasyHubIndicator_swingingBall: //有用的蝌蚪
         _indicator = EasySwimmingBall(
           radius: 8,
+        );
+        break;
+
+      case EasyHubIndicatorType.EasyHubIndicator_creepingBug: //跳动的虫子
+        _indicator = EasyCreepingBug(
+          radius: 30,
         );
         break;
     }
