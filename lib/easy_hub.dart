@@ -10,6 +10,7 @@ import 'package:flutter_easyhub/animation/easy_flashing_circles.dart';
 import 'package:flutter_easyhub/animation/easy_hourglass_timer.dart';
 import 'package:flutter_easyhub/animation/easy_moving_cube.dart';
 import 'package:flutter_easyhub/animation/easy_rotating_two_color_circles.dart';
+import 'package:flutter_easyhub/animation/easy_rubber_band.dart';
 import 'package:flutter_easyhub/animation/easy_spit_bubbles.dart';
 import 'package:flutter_easyhub/animation/easy_pendulum_ball.dart';
 import 'package:flutter_easyhub/animation/easy_swimming_ball.dart';
@@ -66,6 +67,8 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_dancingCube, //跳动的矩形
   EasyHubIndicator_swingingBall, //跳动的小球
   EasyHubIndicator_creepingBug, //跳动的虫子
+  EasyHubIndicator_rubberBand, //跳绳小球
+
 }
 
 class EasyHub {
@@ -516,6 +519,17 @@ class EasyHub {
       case EasyHubIndicatorType.EasyHubIndicator_creepingBug: //跳动的虫子
         _indicator = EasyCreepingBug(
           radius: 30,
+        );
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_rubberBand: //跳动的虫子
+        _indicator = Container(
+          width: 100,
+          height: 100,
+          child: EasyRubberBand(
+            color: EasyHub.getInstance.circleValueColor == null
+                ? Colors.orange
+                : EasyHub.getInstance.circleValueColor.value,
+          ),
         );
         break;
     }

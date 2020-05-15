@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '沙漏',
     '跳动矩形',
     '游泳的小球',
-    '跳动的虫子'
+    '跳动的虫子',
+    '跳动的小球'
   ];
   @override
   Widget build(BuildContext context) {
@@ -395,6 +396,13 @@ class _MyHomePageState extends State<MyHomePage> {
       case 31: //矩形加速减速
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_creepingBug;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 32: //跳绳小球
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_rubberBand;
         EasyHub.getInstance.setParameter(
             circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);
