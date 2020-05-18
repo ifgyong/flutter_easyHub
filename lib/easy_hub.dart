@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/animation/EasyRainCouplet.dart';
 import 'package:flutter_easyhub/animation/easy_creeping_bug.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_cube.dart';
@@ -24,8 +23,6 @@ import 'animation/easy_beating_circle.dart';
 import 'animation/easy_custom_painter.dart';
 import 'animation/easy_rotating_two_rect.dart';
 import 'animation/easy_progress_widget.dart';
-
-import 'animation/easy_custom_painter.dart';
 
 //GlobalKey
 enum EasyHubType {
@@ -68,6 +65,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_swingingBall, //跳动的小球
   EasyHubIndicator_creepingBug, //跳动的虫子
   EasyHubIndicator_rubberBand, //跳绳小球
+  EasyHubIndicator_rainCouplet, //像下雨般的小球
 
 }
 
@@ -531,6 +529,12 @@ class EasyHub {
                 : EasyHub.getInstance.circleValueColor.value,
           ),
         );
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_rainCouplet:
+        _indicator = EasyRainCouplet(
+            color: EasyHub.getInstance.circleValueColor == null
+                ? Colors.orange
+                : EasyHub.getInstance.circleValueColor.value);
         break;
     }
     Text _text = Text(
