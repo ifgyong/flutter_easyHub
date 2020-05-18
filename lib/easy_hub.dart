@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyhub/animation/EasyRainCouplet.dart';
+import 'package:flutter_easyhub/animation/easy_rain_couplet.dart';
 import 'package:flutter_easyhub/animation/easy_creeping_bug.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_cube.dart';
