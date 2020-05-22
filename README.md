@@ -28,7 +28,7 @@
 
 ```
 dependencies:
-    flutter_easyhub: ^0.3.3
+    flutter_easyhub: ^0.3.5
 
 $ flutter pub get
 
@@ -245,6 +245,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
+### 0.3.5 2020.05.22
+> 新增翻转的菱形，仿头条动画哦
+
+### 0.3.4 2020.05.18
+> 类似下雨的小球很帅的哦
+
+### 0.3.3 2020.05.15
+> 小球在跳动
+
+### 0.3.2 2020.05.13
+> 跳动的虫子
+
 ### 0.3.1 2020.05.12
 > 游泳的小球，fix 一些 bug
 
