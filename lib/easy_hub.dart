@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/animation/easy_flip_diamond.dart';
 import 'package:flutter_easyhub/animation/easy_rain_couplet.dart';
 import 'package:flutter_easyhub/animation/easy_creeping_bug.dart';
 import 'package:flutter_easyhub/animation/easy_dancing_ball.dart';
@@ -66,7 +67,7 @@ enum EasyHubIndicatorType {
   EasyHubIndicator_creepingBug, //跳动的虫子
   EasyHubIndicator_rubberBand, //跳绳小球
   EasyHubIndicator_rainCouplet, //像下雨般的小球
-
+  EasyHubIndicator_flipDiamond, // 翻转的线条菱形
 }
 
 class EasyHub {
@@ -532,6 +533,12 @@ class EasyHub {
         break;
       case EasyHubIndicatorType.EasyHubIndicator_rainCouplet:
         _indicator = EasyRainCouplet(
+            color: EasyHub.getInstance.circleValueColor == null
+                ? Colors.orange
+                : EasyHub.getInstance.circleValueColor.value);
+        break;
+      case EasyHubIndicatorType.EasyHubIndicator_flipDiamond:
+        _indicator = EasyFlipDiamond(
             color: EasyHub.getInstance.circleValueColor == null
                 ? Colors.orange
                 : EasyHub.getInstance.circleValueColor.value);

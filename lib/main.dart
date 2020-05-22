@@ -81,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
     '游泳的小球',
     '跳动的虫子',
     '跳动的小球',
-    '像下雨的小球'
+    '像下雨的小球',
+    '翻转的线性菱形 仿新版头条哦'
   ];
   @override
   Widget build(BuildContext context) {
@@ -413,6 +414,14 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.EasyHubIndicator_rainCouplet;
         EasyHub.getInstance.setParameter(
             circleValueColor: null, background: Color.fromRGBO(0, 0, 1, 0));
+        EasyHub.showHub(context);
+        break;
+      case 34: //下雨
+        EasyHub.getInstance.indicatorType =
+            EasyHubIndicatorType.EasyHubIndicator_flipDiamond;
+        EasyHub.getInstance.setParameter(
+            circleValueColor: const AlwaysStoppedAnimation(Colors.red),
+            background: Color.fromRGBO(0, 0, 1, 0));
         EasyHub.showHub(context);
         break;
     }
