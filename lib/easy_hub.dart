@@ -150,26 +150,38 @@ class EasyHub {
 //    return _easyHub;
   }
 /*对外公布接口 消失*/
-  static void dismiss() {
-    EasyHub.getInstance._dismiss();
+  static void dismiss({Duration delay = const Duration(milliseconds: 0)}) {
+    Future.delayed(delay)
+      ..then((_) {
+        EasyHub.getInstance._dismiss();
+      });
   }
 
-  void dismiss_hub() {
-    this._dismiss();
+  void dismiss_hub({Duration delay = const Duration(milliseconds: 0)}) {
+    Future.delayed(delay)
+      ..then((_) {
+        this._dismiss();
+      });
   }
 
-  void _dismiss() {
-    if (_easyHub._listAdd.contains(_entry) && _entry != null) {
-      _entry?.remove();
-      _easyHub._listAdd.remove(_entry);
-    }
+  void _dismiss({Duration delay = const Duration(milliseconds: 0)}) {
+    Future.delayed(delay)
+      ..then((_) {
+        if (_easyHub._listAdd.contains(_entry) && _entry != null) {
+          _entry?.remove();
+          _easyHub._listAdd.remove(_entry);
+        }
+      });
   }
 
-  static void dismiddAll() {
-    for (int i = 0; i < EasyHub.getInstance._listAdd.length; i++) {
-      EasyHub.getInstance._listAdd[i].remove();
-    }
-    EasyHub.getInstance._listAdd.clear();
+  static void dismiddAll({Duration delay = const Duration(milliseconds: 0)}) {
+    Future.delayed(delay)
+      ..then((_) {
+        for (int i = 0; i < EasyHub.getInstance._listAdd.length; i++) {
+          EasyHub.getInstance._listAdd[i].remove();
+        }
+        EasyHub.getInstance._listAdd.clear();
+      });
   }
 
 /*对外公布接口 展示 纯文字*/
