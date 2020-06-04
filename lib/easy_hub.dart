@@ -185,47 +185,57 @@ class EasyHub {
   }
 
 /*对外公布接口 展示 纯文字*/
-  static void show(BuildContext context, String msg) {
+  static void show(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
     EasyHub.getInstance.needupdate = true;
     EasyHub.getInstance._easyHubType = EasyHubType.EasyHub_all;
-    EasyHub.getInstance._show(msg, context);
+    EasyHub.getInstance
+        ._show(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
-  static void showCircleProgress(BuildContext context, String msg) {
+  static void showCircleProgress(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
     EasyHub.getInstance.needupdate = true;
     EasyHub.getInstance._easyHubType = EasyHubType.EasyHub_all;
-    EasyHub.getInstance._show(msg, context);
+    EasyHub.getInstance
+        ._show(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
   /*对外公布接口 展示 纯文字*/
-  static void showiOS(BuildContext context, String msg) {
+  static void showiOS(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
     EasyHub.getInstance.needupdate = true;
     EasyHub.getInstance._easyHubType = EasyHubType.EasyHub_all;
-    EasyHub.getInstance._show(msg, context);
+    EasyHub.getInstance
+        ._show(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
 /*对外公布接口 展示 加载动画*/
-  static void showHub(BuildContext context) {
-    EasyHub.getInstance._showHub(context);
+  static void showHub(BuildContext context, {Duration delayHidenDurtion}) {
+    EasyHub.getInstance._showHub(context, delayHidenDurtion: delayHidenDurtion);
   }
 
 /*展示错误 hub*/
-  static void showErrorHub(BuildContext context, String msg) {
-    EasyHub.getInstance._showError(msg, context);
+  static void showErrorHub(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
+    EasyHub.getInstance
+        ._showError(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
   /*展示完成 hub*/
-  static void showComplateHub(BuildContext context, String msg) {
-    EasyHub.getInstance._showComplate(msg, context);
+  static void showComplateHub(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
+    EasyHub.getInstance
+        ._showComplate(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
   /*对外公布接口 展示 加载文本*/
-  static void showMsg(
-    BuildContext context,
-    String msg,
-  ) {
+  static void showMsg(BuildContext context, String msg,
+      {Duration delayHidenDurtion}) {
     assert(context != null, 'easy Hub context is null');
     EasyHub.getInstance._showMsg(msg, context);
+    if (delayHidenDurtion != null)
+      EasyHub.getInstance._dismiss(delay: delayHidenDurtion);
   }
 
 /*
@@ -234,7 +244,8 @@ class EasyHub {
   void show_hub(
       {String msg,
       @required BuildContext context,
-      @required EasyHubType type}) {
+      @required EasyHubType type,
+      Duration delayHidenDurtion}) {
     this._easyHubType = type;
     this.needupdate = true;
 
@@ -255,53 +266,60 @@ class EasyHub {
         this._showError(msg, context);
         break;
     }
+    if (delayHidenDurtion != null) _dismiss(delay: delayHidenDurtion);
   }
 
-  void _showHub(BuildContext context) {
+  void _showHub(BuildContext context, {Duration delayHidenDurtion}) {
     this._easyHubType = EasyHubType.EasyHub_just;
     this.needupdate = true;
-    _show('', context);
+    _show('', context, delayHidenDurtion: delayHidenDurtion);
   }
 
-  void _showMsg(String msg, BuildContext context) {
+  void _showMsg(String msg, BuildContext context,
+      {Duration delayHidenDurtion}) {
     assert(context != null, 'easy Hub context is null');
     EasyHub.getInstance._easyHubType = EasyHubType.EasyHub_msg;
     EasyHub.getInstance.needupdate = true;
-    _show(msg, context);
+    _show(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
 //展示自定义widget
-  void _showCustom(String msg, BuildContext context, Widget container) {
+  void _showCustom(String msg, BuildContext context, Widget container,
+      {Duration delayHidenDurtion}) {
     assert(context != null, 'easy Hub context is null');
     EasyHub.getInstance._easyHubType = EasyHubType.EasyHub_Custom;
     EasyHub.getInstance.needupdate = true;
     this._customWidget = container;
-    _show(msg, context);
+    _show(msg, context, delayHidenDurtion: delayHidenDurtion);
   }
 
 //  展示错误 信息
-  void _showError(String msg, BuildContext context) {
+  void _showError(String msg, BuildContext context,
+      {Duration delayHidenDurtion}) {
     Widget widget = Container(
       width: 30,
       height: 20,
       margin: EdgeInsets.only(top: 10),
       child: Image.asset('images/error_w.png'),
     );
-    this._showCustom(msg, context, widget);
+    this._showCustom(msg, context, widget,
+        delayHidenDurtion: delayHidenDurtion);
   }
 
   //  展示错误 信息
-  void _showComplate(String msg, BuildContext context) {
+  void _showComplate(String msg, BuildContext context,
+      {Duration delayHidenDurtion}) {
     Widget widget = Container(
       width: 30,
       height: 20,
       margin: EdgeInsets.only(top: 10),
       child: Image.asset('images/complate_w.png'),
     );
-    this._showCustom(msg, context, widget);
+    this._showCustom(msg, context, widget,
+        delayHidenDurtion: delayHidenDurtion);
   }
 
-  void _show(String msg, BuildContext context) {
+  void _show(String msg, BuildContext context, {Duration delayHidenDurtion}) {
     if (_overlayState == null) {
       _overlayState = Overlay.of(context);
     }
@@ -335,6 +353,7 @@ class EasyHub {
       _overlayState.insert(_entry);
       _easyHub._listAdd.add(_entry);
     }
+    if (delayHidenDurtion != null) _dismiss(delay: delayHidenDurtion);
   }
 
   Color _defaultbgColor = Colors.black38;

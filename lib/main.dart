@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/mainHub.dart';
 import 'easy_hub.dart';
 import 'dart:async';
 
@@ -22,7 +23,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainHub(
+        child: MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
@@ -128,24 +131,26 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context) => NewPage(
               title: 'title',
             )));
+    Duration delay = const Duration(seconds: 2);
     switch (index - 1) {
       case -1:
         EasyHub.dismiddAll();
         break;
       case 0:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.getInstance.setParameter(
-          background: Colors.black12,
-        );
-        EasyHub.show(context, '多行\nfgyong\n老师');
+
+//        EasyHub.getInstance.indicatorType =
+//            EasyHubIndicatorType.EasyHubIndicator_default;
+//        EasyHub.getInstance.setParameter(
+//          background: Colors.black12,
+//        );
+//        EasyHub.show(context, '多行\nfgyong\n老师');
         break;
       case 1:
         EasyHub.getInstance.indicatorType =
             EasyHubIndicatorType.EasyHubIndicator_default;
         EasyHub.getInstance.setParameter(background: Colors.black12);
 
-        EasyHub.showMsg(context, '单行哦 loading');
+        EasyHub.showMsg(context, '单行哦 loading', delayHidenDurtion: delay);
         break;
       case 2:
         EasyHub.getInstance.indicatorType =
