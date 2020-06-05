@@ -165,13 +165,7 @@ class EasyHub {
   }
 
   void _dismiss({Duration delay = const Duration(milliseconds: 0)}) {
-    Future.delayed(delay)
-      ..then((_) {
-        if (_easyHub._listAdd.contains(_entry) && _entry != null) {
-          _entry?.remove();
-          _easyHub._listAdd.remove(_entry);
-        }
-      });
+    dismiddAll(delay: delay);
   }
 
   static void dismiddAll({Duration delay = const Duration(milliseconds: 0)}) {
@@ -353,7 +347,9 @@ class EasyHub {
       _overlayState.insert(_entry);
       _easyHub._listAdd.add(_entry);
     }
-    if (delayHidenDurtion != null) _dismiss(delay: delayHidenDurtion);
+    if (delayHidenDurtion != null) {
+      _dismiss(delay: delayHidenDurtion);
+    }
   }
 
   Color _defaultbgColor = Colors.black38;
