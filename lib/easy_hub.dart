@@ -165,7 +165,8 @@ class EasyHub {
   }
 
   void _dismiss({Duration delay = const Duration(milliseconds: 0)}) {
-    dismiddAll(delay: delay);
+//    dismiddAll(delay: delay);
+    EasyHub.dismiddAll(delay: delay);
   }
 
   static void dismiddAll({Duration delay = const Duration(milliseconds: 0)}) {
