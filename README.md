@@ -9,7 +9,7 @@
 
 ## easy use to use this package as a library
 
-```
+```dart
 dependencies:
   flutter_easyhub: ^1.0.0
 
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
  
 then, enjoy yourself:
 
-```
+```dart
 
 EasyHub.show('loading');
 EasyHub.show('loading', duration: Duration(seconds: 2));
@@ -94,7 +94,7 @@ EasyHub.showHub();
 
 ### other EasyHubIndicatorType,you only 
 
-```
+```dart
 EasyHub.instance
   ..backgroundColor = Colors.white
   ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red);
@@ -116,7 +116,7 @@ EasyHub.instance
 
 ### Customize
 
-```
+```dart
 /// just available when [EasyHubType] is [msg]
 
   String msg;
