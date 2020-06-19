@@ -7,7 +7,7 @@ homepage: http://www.fgyong.cn
 author: fgyong
 repository: https://github.com/ifgyong/flutter_easyHub
 
-environment:ss
+environment:
 
   sdk: ">=2.1.0 <3.0.0"
 

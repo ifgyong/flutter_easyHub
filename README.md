@@ -70,6 +70,8 @@ child: Text('my test'),
 
 ### used just like it
 ![](images/example.gif)
+![](images/example2.gif)
+![](images/example3.gif)
 
 ### how to chose style
 #### light
@@ -98,6 +100,14 @@ EasyHub.showHub();
 EasyHub.instance
   ..backgroundColor = Colors.white
   ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red);
+```
+### when you want touch widget,then hiden it.
+
+```dart 
+/// only used for maskStyle!= none.
+  EasyHub.instance.onTap = () {
+      EasyHub.dismiss();
+    };
 ```
  
 

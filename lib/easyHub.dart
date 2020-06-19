@@ -127,24 +127,26 @@ class EasyHub {
 
 /*展示错误 hub*/
   static void showErrorHub(String msg, {Duration duration}) {
-    EasyHub.instance
-        ._showError(msg, duration: duration ?? _getInstance().displayDuration);
+    duration ??= _getInstance().displayDuration;
+
+    EasyHub.instance._showError(msg, duration: duration);
   }
 
   /*展示完成 hub*/
   static void showCompleteHub(String msg, {Duration duration}) {
-    EasyHub.instance._showComplate(msg,
-        duration: duration ?? _getInstance().displayDuration);
+    duration ??= _getInstance().displayDuration;
+    EasyHub.instance._showComplate(msg, duration: duration);
   }
 
   /*展示完成 hub*/
   static void showInfoHub(String msg, {Duration duration}) {
-    EasyHub.instance
-        ._showInfo(msg, duration: duration ?? _getInstance().displayDuration);
+    duration ??= _getInstance().displayDuration;
+    EasyHub.instance._showInfo(msg, duration: duration);
   }
 
   /*对外公布接口 展示 加载文本*/
   static void showMsg(String msg, {Duration duration}) {
+    duration ??= _getInstance().displayDuration;
     EasyHub.instance._showMsg(msg);
     if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
@@ -174,6 +176,8 @@ class EasyHub {
 
   void _showMsg(String msg, {Duration duration}) {
     assert(context != null, 'easy Hub context is null');
+    duration ??= _getInstance().displayDuration;
+
     EasyHub.instance._easyHubType = EasyHubType.msg;
     _show(msg, duration: duration);
   }

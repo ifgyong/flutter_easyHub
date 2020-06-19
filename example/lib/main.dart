@@ -216,7 +216,9 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 1:
         EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
-        EasyHub.showMsg('单行哦 loading', duration: delay);
+        EasyHub.showMsg(
+          '单行哦 loading',
+        );
         break;
       case 2:
         EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
@@ -244,12 +246,19 @@ class _MyHomePageState extends State<MyHomePage> {
             '公众号：fgyong的开发日记 公众号：fgyong的开发日记 公众号：fgyong的开发日记');
         break;
       case 5:
-        EasyHub.instance.backgroundColor = Colors.black38;
+        EasyHub.instance
+          ..backgroundColor = Colors.greenAccent
+          ..maskColor = Colors.red.withOpacity(0.5);
+
         errorOrInfo += 1;
         if (errorOrInfo % 2 == 0) {
-          EasyHub.showErrorHub('网络错误', duration: delay);
+          EasyHub.showErrorHub(
+            '网络错误',
+          );
         } else {
-          EasyHub.showInfoHub('网络错误', duration: delay);
+          EasyHub.showInfoHub(
+            '网络错误',
+          );
         }
         break;
       case 6:
@@ -272,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.circularProgressEasyOutEasyIn;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.black.withOpacity(0.5))
+              new AlwaysStoppedAnimation(Colors.black.withOpacity(0.5))
           ..animationBackgroundColor = Colors.white;
 
         EasyHub.showHub();
@@ -283,7 +292,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.circularProgressEasy;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlue)
+              new AlwaysStoppedAnimation(Colors.lightBlue)
           ..animationBackgroundColor = Colors.white;
 
         EasyHub.showHub();
@@ -298,12 +307,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
         EasyHub.showHub();
         break;
-    //circleBeat
+      //circleBeat
       case 11:
         EasyHub.instance.indicatorType = EasyHubIndicatorType.beattingCircle;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Color.fromRGBO(1, 52, 255, 0.5))
+              new AlwaysStoppedAnimation(Color.fromRGBO(1, 52, 255, 0.5))
           ..animationBackgroundColor = Colors.white
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -313,7 +322,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.singlebeattingCircle;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.orange.withOpacity(0.7))
+              new AlwaysStoppedAnimation(Colors.orange.withOpacity(0.7))
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
 
@@ -323,7 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.beatingRects;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.black.withOpacity(0.3);
         EasyHub.showHub();
@@ -332,7 +341,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.rotatingCircles;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
 
@@ -343,7 +352,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.rotatingDeformedCircles;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.pinkAccent)
+              new AlwaysStoppedAnimation(Colors.pinkAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
 
@@ -354,7 +363,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.rotatingDeformedCirclesRow;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.pinkAccent)
+              new AlwaysStoppedAnimation(Colors.pinkAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
 
@@ -364,7 +373,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.rotatingTwoRect;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
 
@@ -375,7 +384,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.rotatingTwoCircles;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.greenAccent)
+              new AlwaysStoppedAnimation(Colors.greenAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white.withOpacity(0);
         EasyHub.showHub();
@@ -392,7 +401,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.pendulumingBall;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -401,7 +410,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.waves;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -410,7 +419,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.spitBubbles;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -419,7 +428,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.movingCube;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -429,7 +438,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyHubIndicatorType.rotatingTwoColorBall;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -438,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.dancingBalls;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white
           ..fontColor = Colors.black54;
@@ -448,7 +457,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.flashingBalls;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -457,7 +466,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.fallingBall;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white
           ..maskStyle = EasyHubMaskStyle.none;
@@ -467,7 +476,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.hourglass;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white
           ..maskColor = Colors.black.withOpacity(0.5)
@@ -488,7 +497,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.swingingBall;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -497,7 +506,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.creepingBug;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -506,7 +515,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.rubberBand;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -515,7 +524,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.rainCouplet;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -524,7 +533,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.flipDiamond;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         EasyHub.showHub();
@@ -533,7 +542,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.lineProgress;
         EasyHub.instance
           ..animationForegroundColor =
-          new AlwaysStoppedAnimation(Colors.lightBlueAccent)
+              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
           ..animationBackgroundColor = Colors.orangeAccent
           ..backgroundColor = Colors.white;
         v = 0;
