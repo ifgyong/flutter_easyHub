@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+@immutable
 class EasyBeatingRects extends StatefulWidget {
   /// 跳动的矩形
   /// margin 间隔
@@ -10,7 +11,7 @@ class EasyBeatingRects extends StatefulWidget {
   EasyBeatingRects(
       {Key key, this.color, this.margin, this.rectHeight, this.rectWidth})
       : super(key: key);
-  Color color;
+  final Color color;
   final double margin;
   final double rectWidth;
   final double rectHeight;

@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyFlipDiamond extends StatefulWidget {
-  Color color; //颜色
-  Size size; //大小
+  final Color color; //颜色
+  final Size size; //大小
   ///翻转的 线条菱形
   /// Size size; //大小
   /// Color color; //颜色

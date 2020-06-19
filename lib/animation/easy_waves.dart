@@ -6,12 +6,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class EasyWaving extends StatefulWidget {
-  double progress; //设置就显示，默认0.5
-  Text text; //进度数字 自定义
-  bool isHidenProgress; //隐藏文字
-  double radius; //圆圈半径
-  Color color; //波浪颜色
-  Color circleColor; //圆圆颜色
+  final double progress; //设置就显示，默认0.5
+  final Text text; //进度数字 自定义
+  final bool isHidenProgress; //隐藏文字
+  final double radius; //圆圈半径
+  final Color color; //波浪颜色
+  final Color circleColor; //圆圆颜色
   /// 大波浪
   /// double progress; //设置就显示，默认0.5
   ///  Text text; //进度数字 自定义

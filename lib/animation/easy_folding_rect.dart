@@ -11,7 +11,6 @@ class EasyFoldingRect extends StatefulWidget {
   /// Color 矩形颜色 最好加入半透明的元素，效果更好
   /// width 矩形直径
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
-
   EasyFoldingRect({Key key, this.color, this.width}) : super(key: key);
   _EasyFoldingRect createState() => _EasyFoldingRect();
 }
@@ -73,7 +72,6 @@ class _EasyFoldingRect extends State<EasyFoldingRect>
       animation: _animationController,
       builder: (context, child) {
         double v = _animationController.value;
-        double ops = 1 - (v - v.floor());
         Matrix4 defaultM = Matrix4.identity()
           ..scale(1.0)
           ..setEntry(3, 2, sj);
@@ -197,7 +195,6 @@ class _EasyFoldingRect extends State<EasyFoldingRect>
         return Container(
           width: width * 2,
           height: width * 2,
-          margin: EdgeInsets.only(left: 10, top: 10),
           child: Stack(
             children: list,
           ),
@@ -224,5 +221,11 @@ class _EasyFoldingRect extends State<EasyFoldingRect>
             color: color == null ? Colors.lightBlueAccent : color,
           ),
         ));
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 }

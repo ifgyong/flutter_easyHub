@@ -4,15 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum EasyCustomCirclePainterType {
-  Easy_custom, //自定义进度 开始 结束弧度 和文字
-  Easy_progeress, //进度条
-  Easy_startAndEnd, //开始和结束都移动
+  custom, //自定义进度 开始 结束弧度 和文字
+  progress, //进度条
+  startAndEnd, //开始和结束都移动
 }
 
 class EasyCustomCirclePainter extends CustomPainter {
   double value;
   double startAngle;
-  double endAndle;
+  double endAngle;
   Color backgroundColor;
   Color foregroundColor;
 
@@ -25,7 +25,7 @@ class EasyCustomCirclePainter extends CustomPainter {
 
   EasyCustomCirclePainter(
       {@required this.startAngle,
-      @required this.endAndle,
+      @required this.endAngle,
       this.backgroundColor,
       this.foregroundColor,
       this.value,
@@ -62,19 +62,19 @@ class EasyCustomCirclePainter extends CustomPainter {
     }
 
     switch (type) {
-      case EasyCustomCirclePainterType.Easy_custom:
+      case EasyCustomCirclePainterType.custom:
         start = pi * 2 * startAngle;
 
         assert(value != null, 'value is null');
         end = pi * 2 * value; //开始和结束都有的
         break;
-      case EasyCustomCirclePainterType.Easy_progeress: // done
+      case EasyCustomCirclePainterType.progress: // done
         assert(value != null, 'value is null');
 
         start = pi * 2 * 0.25;
         end = pi * 2 * value;
         break;
-      case EasyCustomCirclePainterType.Easy_startAndEnd: //done
+      case EasyCustomCirclePainterType.startAndEnd: //done
         assert(startAngle != null, 'startAngle is null');
 
         start = pi * 2 * startAngle;
@@ -102,9 +102,9 @@ class EasyCustomCirclePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(EasyCustomCirclePainter oldDelegate) {
-    bool repain = startAngle != oldDelegate.startAngle ||
-        endAndle != oldDelegate.endAndle ||
+    bool repaint = startAngle != oldDelegate.startAngle ||
+        endAngle != oldDelegate.endAngle ||
         value != oldDelegate.value;
-    return repain;
+    return repaint;
   }
 }

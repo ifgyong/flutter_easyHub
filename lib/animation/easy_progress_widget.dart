@@ -4,26 +4,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'easy_custom_painter.dart';
 
-class EasyProgressWidget extends StatefulWidget {
-  double value;
-  Color backgroundColor;
-  Color circlebackgroundColor;
-  Color circleForegroundColor;
-  EasyCustomCirclePainterType type;
+class EasyProgressWidget extends ProgressIndicator {
+  final EasyCustomCirclePainterType type;
 
   /// 自定义进度条
-  /// value 值
-  /// backgroundColor 背景
-  /// circleForegroundColor 前景
   /// type 类型
+  ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
   EasyProgressWidget(
       {Key key,
-      this.value,
-      this.circlebackgroundColor,
-      this.circleForegroundColor,
-      this.backgroundColor,
-      @required this.type})
-      : super(key: key);
+      double value,
+      Color backgroundColor,
+      Animation<Color> valueColor,
+      String semanticsLabel,
+      String semanticsValue,
+      this.type})
+      : super(
+          key: key,
+          value: value,
+          backgroundColor: backgroundColor,
+          valueColor: valueColor,
+          semanticsLabel: semanticsLabel,
+          semanticsValue: semanticsValue,
+        );
   @override
   State<StatefulWidget> createState() {
     return _EasyProgressWidget();
@@ -35,13 +37,13 @@ class _EasyProgressWidget extends State<EasyProgressWidget>
   @override
   Widget build(BuildContext context) {
     switch (widget.type) {
-      case EasyCustomCirclePainterType.Easy_custom:
+      case EasyCustomCirclePainterType.custom:
         return animateBuildEasyInEasyOut(widget.type, valueChange: true);
         break;
-      case EasyCustomCirclePainterType.Easy_progeress:
+      case EasyCustomCirclePainterType.progress:
         return animateBuildEasyInEasyOut(widget.type, valueChange: false);
         break;
-      case EasyCustomCirclePainterType.Easy_startAndEnd:
+      case EasyCustomCirclePainterType.startAndEnd:
         return animateBuildEasyInEasyOut(widget.type, valueChange: false);
         break;
       default:
@@ -90,7 +92,7 @@ class _EasyProgressWidget extends State<EasyProgressWidget>
           width: 60,
           height: 60,
           child: Text(
-            type == EasyCustomCirclePainterType.Easy_progeress
+            type == EasyCustomCirclePainterType.progress
                 ? '${(val * 100).floorToDouble()} %'
                 : '',
             style: TextStyle(
@@ -99,17 +101,16 @@ class _EasyProgressWidget extends State<EasyProgressWidget>
                 fontSize: 15),
           ),
         );
-        Color fore = widget.circleForegroundColor == null
-            ? Colors.blue
-            : widget.circleForegroundColor;
-        Color bgColor = widget.circlebackgroundColor == null
+        Color fore =
+            widget.valueColor == null ? Colors.blue : widget.valueColor.value;
+        Color bgColor = widget.backgroundColor == null
             ? Colors.white
-            : widget.circlebackgroundColor;
+            : widget.backgroundColor;
         return new CustomPaint(
           size: Size(60, 60),
           foregroundPainter: EasyCustomCirclePainter(
               startAngle: startAngle,
-              endAndle: sin(startAngle * pi),
+              endAngle: sin(startAngle * pi),
               foregroundColor: fore,
               backgroundColor: bgColor,
               type: type,

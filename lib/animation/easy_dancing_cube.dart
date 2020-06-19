@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyDancingCube extends StatefulWidget {
-  double radius; //矩形半径 view 宽度是小球的11倍
+  final double radius; //矩形半径 view 宽度是小球的11倍
   /// 跳动的矩形 4个矩形排成一排
   /// double radius; //矩形半径
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
@@ -197,7 +197,6 @@ class _EasyDancingCube extends State<EasyDancingCube>
           width: width,
           height: width,
           margin: EdgeInsets.only(top: radius * 4),
-//          color: Colors.lightGreen,
           child: Stack(
             children: list,
           ),

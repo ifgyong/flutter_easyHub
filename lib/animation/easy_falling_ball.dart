@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyFallingBall extends StatefulWidget {
-  Color color; //小球的颜色
-  double radius; //小球半径
+  final Color color; //小球的颜色
+  final double radius; //小球半径
   /// 掉落的小球
   /// Color color;//小球的颜色
   /// double radius;//小球半径
@@ -66,7 +66,7 @@ class _EasyFallingBall extends State<EasyFallingBall>
             ),
           ),
         );
-        Positioned p1_shadow = Positioned(
+        Positioned p1shadow = Positioned(
           left: _animationController.value * radius * 11 - radius,
           bottom: -radius * 1.5,
           child: Transform(
@@ -86,7 +86,7 @@ class _EasyFallingBall extends State<EasyFallingBall>
           ),
         );
 
-        list.add(p1_shadow);
+        list.add(p1shadow);
         list.add(p1);
         return Stack(
           children: list,

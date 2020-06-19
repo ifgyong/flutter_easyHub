@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class EasyBeattingCircles extends StatefulWidget {
   EasyBeattingCircles({Key key, this.color, this.single, this.radius})
       : super(key: key);
@@ -14,7 +15,6 @@ class EasyBeattingCircles extends StatefulWidget {
   /// color 颜色
   /// radius 半径
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
-
   _EasyBeattingCircles createState() => _EasyBeattingCircles();
 }
 
@@ -65,8 +65,8 @@ class _EasyBeattingCircles extends State<EasyBeattingCircles>
             return new CustomPaint(
                 painter: CirlceBeatPaintet(
                     size: Size(defaultRadius * 2, defaultRadius * 2),
-                    circlerad: line1,
-                    circlerad2: line2,
+                    circleRad: line1,
+                    circleRad2: line2,
                     color: widget.color == null
                         ? Color.fromRGBO(255, 255, 255, 0.5)
                         : widget.color));
@@ -85,12 +85,12 @@ class CirlceBeatPaintet extends CustomPainter {
   CirlceBeatPaintet(
       {Key key,
       this.size,
-      this.circlerad,
-      this.circlerad2,
+      this.circleRad,
+      this.circleRad2,
       @required this.color});
   final Size size;
   final Color color;
-  double circlerad, circlerad2;
+  double circleRad, circleRad2;
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint();
@@ -98,10 +98,10 @@ class CirlceBeatPaintet extends CustomPainter {
     paint.style = PaintingStyle.fill;
 
     canvas.drawCircle(
-        Offset(size.width / 2, size.height / 2), circlerad, paint);
-    if (circlerad2 != null) {
+        Offset(size.width / 2, size.height / 2), circleRad, paint);
+    if (circleRad2 != null) {
       canvas.drawCircle(
-          Offset(size.width / 2, size.height / 2), circlerad2, paint);
+          Offset(size.width / 2, size.height / 2), circleRad2, paint);
     }
   }
 

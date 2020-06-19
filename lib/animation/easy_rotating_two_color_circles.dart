@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 
 class EasyRotatingTwoColorCircles extends StatefulWidget {
   /// 球体颜色1
-  Color color1;
+  final Color color1;
 
   /// 球体颜色2
-  Color color2;
+  final Color color2;
 
   /// 球体半径
-  double radius;
+  final double radius;
 
   /// 旋转的魔球
   /// Color color1; //球体颜色1
@@ -91,7 +91,7 @@ class _EasyRotatingTwoColorCircles extends State<EasyRotatingTwoColorCircles>
               ),
             ));
 
-        Positioned p1_back = Positioned(
+        Positioned p1back = Positioned(
             left: 0,
             top: radius * 4,
             child: Transform(
@@ -134,7 +134,7 @@ class _EasyRotatingTwoColorCircles extends State<EasyRotatingTwoColorCircles>
                 ),
               ),
             ));
-        Positioned p2_back = Positioned(
+        Positioned p2back = Positioned(
             right: 0,
             top: radius * 4,
             child: Transform(
@@ -154,9 +154,9 @@ class _EasyRotatingTwoColorCircles extends State<EasyRotatingTwoColorCircles>
               ),
             ));
         if (v >= 0.5) {
-          list = [p1, p2, p1_back, p2_back];
+          list = [p1, p2, p1back, p2back];
         } else {
-          list = [p2, p1, p1_back, p2_back];
+          list = [p2, p1, p1back, p2back];
         }
         return Container(
           width: width,
@@ -171,7 +171,6 @@ class _EasyRotatingTwoColorCircles extends State<EasyRotatingTwoColorCircles>
     return builder;
   }
 
-  @override
   void dispose() {
     _animationController.dispose();
     super.dispose();

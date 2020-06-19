@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyFlashCircles extends StatefulWidget {
-  Color color; //小球的颜色
-  double radius; //小球半径
+  final Color color; //小球的颜色
+  final double radius; //小球半径
   /// 闪烁的9饼
   /// Color color;//小球的颜色
   /// double radius;//小球半径

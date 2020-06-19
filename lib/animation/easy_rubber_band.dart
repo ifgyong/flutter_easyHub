@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyRubberBand extends StatefulWidget {
-  Color color; //跳绳和 球的颜色
+  final Color color; //跳绳和 球的颜色
   ///跳绳的小球
   ///Color color; //跳绳和 球的颜色
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
@@ -52,16 +52,13 @@ class _EasyRubberBand extends State<EasyRubberBand>
       builder: (context, child) {
         double v = _curvedAnimation.value;
         double v2 = _animationController.value;
-//        v2 = 1;
-//        v = v2;
+
         CustomPaint p1 = CustomPaint(
           painter: _RubberBandPanter(
               value: v, y: width * 2.5, radius: width, color: widget.color),
-//          size: Size(10, 50),
         );
         Positioned p = Positioned(
           child: Container(
-//            color: Colors.redAccent,
             child: p1,
           ),
           left: 0,
@@ -72,7 +69,7 @@ class _EasyRubberBand extends State<EasyRubberBand>
 
         double rotate1 = v2 * pi * 1 / 8;
 
-        Positioned p_left = Positioned(
+        Positioned pLeft = Positioned(
             width: width,
             height: width,
             left: 0,
@@ -85,7 +82,7 @@ class _EasyRubberBand extends State<EasyRubberBand>
                 size: Size(width, width),
               ),
             ));
-        Positioned p_right = Positioned(
+        Positioned pRight = Positioned(
             width: width,
             height: width,
             right: 0,
@@ -100,7 +97,7 @@ class _EasyRubberBand extends State<EasyRubberBand>
             ));
 
         Stack stack = Stack(
-          children: <Widget>[p, p_left, p_right],
+          children: <Widget>[p, pLeft, pRight],
         );
         return stack;
       },

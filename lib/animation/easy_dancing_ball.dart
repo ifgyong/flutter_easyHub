@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyDancingBall extends StatefulWidget {
-  double radius; //小球半径 view 宽度是小球的11倍
+  final double radius; //小球半径 view 宽度是小球的11倍
   /// 跳动的小球 4个小球排成一排
   /// double radius; //小球半径
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub

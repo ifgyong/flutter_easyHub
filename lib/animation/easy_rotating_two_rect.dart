@@ -17,7 +17,6 @@ class EasyRotatingTwoRect extends StatefulWidget {
   /// List 矩形的颜色 最好设置2个颜色
   /// width 矩形宽度
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
-
   EasyRotatingTwoRect({Key key, this.colors, this.width}) : super(key: key);
   _EasyRotatingTwoRect createState() => _EasyRotatingTwoRect();
 }
@@ -41,7 +40,6 @@ class _EasyRotatingTwoRect extends State<EasyRotatingTwoRect>
         if (state == AnimationStatus.dismissed) {
           _animationController.forward();
         }
-        ;
       })
       ..forward();
     super.initState();
@@ -59,7 +57,7 @@ class _EasyRotatingTwoRect extends State<EasyRotatingTwoRect>
     if (stop) {
       _animationController.stop();
       Future.delayed(Duration(milliseconds: 200)).then((_) {
-        _animationController.reverse();
+        _animationController?.reverse();
         stop = false;
       });
       return;

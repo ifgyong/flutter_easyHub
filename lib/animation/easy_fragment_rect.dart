@@ -9,7 +9,6 @@ class EasyFragmentingRect extends StatefulWidget {
   /// color 矩形颜色
   /// width 矩形宽度
   ///  更多信息见仓库：https://github.com/ifgyong/flutter_easyHub
-
   EasyFragmentingRect({Key key, this.color, this.width}) : super(key: key);
   _EasyFragmentingRect createState() => _EasyFragmentingRect();
 }

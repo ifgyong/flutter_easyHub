@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyHourglassTimer extends StatefulWidget {
-  double width; //
-  Color color;
+  final double width; //
+  final Color color;
 
   /// ⌛效果
   /// double width; 宽度
@@ -75,7 +75,7 @@ class _EasyHourglassTimer extends State<EasyHourglassTimer>
           alignment: Alignment.center,
           transform: Matrix4.identity()..rotateZ(ro),
           child: CustomPaint(
-            painter: _HourglassTimerPainter(value: value),
+            painter: _HourglassTimerPainter(value: value, color: widget.color),
             size: Size(wd, wd),
           ),
         );
@@ -120,7 +120,7 @@ class _HourglassTimerPainter extends CustomPainter {
         ..strokeWidth = 4.0
         ..style = PaintingStyle.stroke;
     }
-    bool isdown = true;
+//    bool isdown = true;
 //    if (value > 1.0) {
 //      isdown = false;
 //      value -= 1.2;
@@ -163,12 +163,12 @@ class _HourglassTimerPainter extends CustomPainter {
       p.reset();
       Offset p2_1 = Offset(wd / 2 - wd / 2 * value, wd);
       Offset p2_2 = Offset(wd / 2 + wd / 2 * value, wd);
-      Offset p2_top = Offset(wd / 2, wd - value * wd / 2);
+      Offset p2top = Offset(wd / 2, wd - value * wd / 2);
 
-      p.moveTo(p2_top.dx, p2_top.dy);
+      p.moveTo(p2top.dx, p2top.dy);
       p.lineTo(p2_1.dx, p2_1.dy);
       p.lineTo(p2_2.dx, p2_2.dy);
-      p.lineTo(p2_top.dx, p2_top.dy);
+      p.lineTo(p2top.dx, p2top.dy);
       canvas.drawPath(p, _paint2);
     }
   }

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasySwimmingBall extends StatefulWidget {
-  double radius; //小球半径
+  final double radius; //小球半径
   /// 会游泳的小球
   /// 像蝌蚪一样
   /// double radius; //小球半径
@@ -17,7 +17,6 @@ class _EasySwimmingBall extends State<EasySwimmingBall>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
 
-  CurvedAnimation _curvedAnimation;
   int tag = 0;
   @override
   void initState() {
@@ -38,8 +37,8 @@ class _EasySwimmingBall extends State<EasySwimmingBall>
         }
       })
       ..forward();
-    _curvedAnimation =
-        CurvedAnimation(parent: _animationController, curve: Curves.easeInOut);
+//    _curvedAnimation =
+//        CurvedAnimation(parent: _animationController, curve: Curves.easeInOut);
     super.initState();
   }
 
@@ -111,7 +110,7 @@ class _EasySwimmingBall extends State<EasySwimmingBall>
               ),
             ));
 
-        Positioned p1_back = Positioned(
+        Positioned p1back = Positioned(
             left: 0,
             child: Transform(
               alignment: Alignment.center,
@@ -172,7 +171,7 @@ class _EasySwimmingBall extends State<EasySwimmingBall>
                 ),
               ),
             ));
-        list = [p1_back, p4, p3, p2, p1];
+        list = [p1back, p4, p3, p2, p1];
         return Container(
           width: width,
           height: width,
@@ -219,10 +218,10 @@ class _SwimmingBall extends CustomPainter {
     p.moveTo(size.width / 2, size.height / 2);
     Offset p1 = new Offset(size.width / 2, size.height / 2);
 
-    double r_big = radius;
+    double rBig = radius;
 //    p.moveTo(0, size.height / 2);
 
-    double r2 = r_big / 2;
+    double r2 = rBig / 2;
     Offset p2;
     if (value < 0.3) {
       p2 = new Offset((1 - value / 0.3) * 2 * r2 - r2, p1.dy);
@@ -232,18 +231,18 @@ class _SwimmingBall extends CustomPainter {
       p2 = new Offset(((value - 0.6) / 0.4) * 2 * r2 - r2, p1.dy);
     }
 
-    p.addArc(Rect.fromCircle(center: p1, radius: r_big), 0, 2 * pi);
+    p.addArc(Rect.fromCircle(center: p1, radius: rBig), 0, 2 * pi);
     p.addArc(Rect.fromCircle(center: p2, radius: r2), 0, 2 * pi);
     canvas.drawPath(p, _paint);
     p.reset();
 
-    Offset p2_top = new Offset(p2.dx, size.height / 2 - r2);
-    Offset p2_bottom = new Offset(p2.dx, size.height / 2 + r2);
+    Offset p2top = new Offset(p2.dx, size.height / 2 - r2);
+    Offset p2bottom = new Offset(p2.dx, size.height / 2 + r2);
 
-    p.moveTo(p2_top.dx, p2_top.dy);
-    p.lineTo(p1.dx, p1.dy - r_big);
-    p.lineTo(p1.dx, p1.dy + r_big);
-    p.lineTo(p2_bottom.dx, p2_bottom.dy);
+    p.moveTo(p2top.dx, p2top.dy);
+    p.lineTo(p1.dx, p1.dy - rBig);
+    p.lineTo(p1.dx, p1.dy + rBig);
+    p.lineTo(p2bottom.dx, p2bottom.dy);
     p.close();
     canvas.drawPath(p, _paint);
   }

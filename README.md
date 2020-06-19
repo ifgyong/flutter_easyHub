@@ -1,120 +1,25 @@
-# flutter_easyhub
+# fluttereasyhub
 ![](https://badgen.net/github/license/micromatch/micromatch)
 ![](https://img.shields.io/pub/v/flutter_easyhub)
 
-> 一个纯粹的flutter，支持android和iOS，没有一点原生代码，更简单的loading动画，现有20多种动画，支持自定义前景色和背景色，支持动画大小调整。
-
-## 效果展示
-
-### 详细动画
-
-
-|![](http://blog.fgyong.cn/15881531447.GIF) default |![](http://blog.fgyong.cn/158815327673.GIF) CircularProgress|![](http://blog.fgyong.cn/158815333758.PNG) showErrorHub| ![](http://blog.fgyong.cn/158815337030.PNG) showComplateHub |![](http://blog.fgyong.cn/158815342172.GIF) LineProgress |
-|:-:|:-:|:-:|:-:|:-:|
-|![](http://blog.fgyong.cn/158815348244.GIF) CircularProgressEasyOutEasyIn |![](http://blog.fgyong.cn/158815353678.GIF) CircularProgressEasy |![](http://blog.fgyong.cn/158815359123.GIF) singleFlipingRect |![](http://blog.fgyong.cn/15881537979.GIF) beattingCircle |![](http://blog.fgyong.cn/158815385940.GIF) singlebeattingCircle |
-![](http://blog.fgyong.cn/158815397265.GIF) beatingRects |![](http://blog.fgyong.cn/158815401292.GIF) rotatingCircles |![](http://blog.fgyong.cn/158815406042.GIF) rotatingDeformedCircles |![](http://blog.fgyong.cn/15881541753.GIF) rotatingTwoRect |![](http://blog.fgyong.cn/158815421527.GIF) rotatingTwoCircles |
-|![](http://blog.fgyong.cn/158815425129.GIF) foldingRect |![](http://blog.fgyong.cn/158823236312.GIF) pendulumingBall |![](http://blog.fgyong.cn/158874617749.GIF) waves |![](http://blog.fgyong.cn/158884280749.GIF) spitBubbles |![](http://blog.fgyong.cn/15889160117.GIF) movingCube |
-|![](http://blog.fgyong.cn/158892703673.GIF) rotatingTwoColorBall |![](http://blog.fgyong.cn/158900155158.GIF) dancingBall |![](http://blog.fgyong.cn/158900524872.GIF) flashingBalls|![](http://blog.fgyong.cn/158901278244.GIF)fallingBall|![](http://blog.fgyong.cn/158918028678.GIF)<br>hourglass|
-|![](http://blog.fgyong.cn/158918474123.GIF) dancingCube|![](http://blog.fgyong.cn/15892648257.GIF) swingingBall|![](http://blog.fgyong.cn/158934173073.GIF) creepingBug|![](http://blog.fgyong.cn/15895208587.GIF)rubberBand|![](http://blog.fgyong.cn/15897648717.GIF)rainCouplet|
-|![](http://blog.fgyong.cn/15901133947.GIF) flipDiamond|
+> A pure flutter, supporting android and iOS, no native code, simpler loading animation, more than 20 existing animations, support for custom foreground and background colors.
 
 
 
 
-
-
-### 温馨提示 -->想看完整效果最好克隆本地直接运行,效果更佳!!
 ## easy use to use this package as a library
 
 ```
 dependencies:
-    flutter_easyhub: ^0.3.5
+  flutter_easyhub: ^1.0.0
 
 $ flutter pub get
 
 import 'package:flutter_easyhub/flutter_easyhub.dart';
 ```
-### 初始化
-```
-EasyHub.getInstance
- ..setBackgroundColor(Colors.black38)
- ..setCircleBackgroundColor(Colors.lightGreen)
- ..setValueColor(new AlwaysStoppedAnimation(Colors.black38));
-```
-
-OR
-
-```
-
-EasyHub hub = EasyHub(
-   circlebackgroundColor: Colors.black38,
-   circleValueColor: new AlwaysStoppedAnimation(Colors.teal),
-   background: Colors.black38);
-   // OR
- hub
-   ..setParameter(
-       background: Colors.black38,
-       circleValueColor: new AlwaysStoppedAnimation(Colors.black38),
-       circlebackgroundColor: Colors.lightGreen);
-hub.show_hub(
-   context: context, type: EasyHubType.EasyHub_msg, msg: 'loading');
-
-// 隐藏
-hub.dismiss_hub();
-// OR
- EasyHub.dismiddAll();
-
-```
-
-### 隐藏所有
- 
-```
- EasyHub.dismiddAll();
-```
-
-### 展示文本
- 
-```
-
- EasyHub.show(context, 'loading');
-```
- 
-### 展示HUB
-
-```
- EasyHub.showHub(context);
- 
-```
-### 展示文本 + hub
-
-```
- EasyHub.showMsg(context, '加载文字展示');
-```
-
-
-### 展示错误
-
-```
-EasyHub.showErrorHub(context, '网络错误');
-```
-### 展示完成
-
-```
-EasyHub.showComplateHub(context, '下载完成');
-```
-
-### 具体使用例子
-
-```
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_easyhub/flutter_easyhub.dart';
-
-void main() => runApp(MyApp());
-
+### how to use
+```dart
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -122,190 +27,174 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      builder: (ctx, child) =>
+          FlutterEasyHub(child: MyHomePage(title: 'Flutter Demo Home Page')),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  List list = [
-    'hide all',
-    'default hub',
-    'msg',
-    'hub',
-    'hub default',
-    'msg 多行',
-    'error hub',
-    'complate hub',
-    'line',
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: getList(),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  Widget getList() {
-    return new ListView.builder(
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-            onTap: () {
-              show(index);
-            },
-            child: Container(
-              height: 45,
-              margin: EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 20),
-              color: Colors.black12,
-              alignment: Alignment.center,
-              child: Text(
-                '${list[index]}',
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              ),
-            ));
-      },
-      itemCount: list.length,
-    );
-  }
-
-  Timer t;
-  void show(int index) {
-    switch (index - 1) {
-      case -1:
-        EasyHub.dismiddAll();
-        break;
-      case 0:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.show(context, '多行\nfgyong\n老师');
-        break;
-      case 1:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.showMsg(context, '单行哦 loading');
-        break;
-      case 2:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_default;
-        EasyHub.showHub(context);
-        break;
-      case 3:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_CircularProgress;
-        EasyHub.show(context, 'fgyong 公众号\nfgyong开发日记');
-        break;
-      case 4:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_CircularProgress;
-        EasyHub.showMsg(
-            context,
-            'fgyong blog'
-            '公众号：fgyong的开发日记 公众号：fgyong的开发日记 公众号：fgyong的开发日记'
-            '公众号：fgyong的开发日记 公众号：fgyong的开发日记 公众号：fgyong的开发日记');
-        break;
-      case 5:
-        EasyHub.showErrorHub(context, '网络错误');
-        break;
-      case 6:
-        EasyHub.showComplateHub(context, '下载完成');
-
-        break;
-      case 7:
-        EasyHub.getInstance.indicatorType =
-            EasyHubIndicatorType.EasyHubIndicator_LineProgress;
-
-        EasyHub.getInstance.setParameter(
-            circleValueColor: new AlwaysStoppedAnimation(Colors.white),
-            circlebackgroundColor: Colors.black38);
-        EasyHub.show(context, 'fgyong\nwww.fgyong.cn');
-
-        break;
-    }
-    Future.delayed(Duration(seconds: 2)).then((v) {
-      EasyHub.dismiddAll();
-    });
   }
 }
 ```
 
-### 0.3.5 2020.05.22
-> 新增翻转的菱形，仿头条动画哦
+ 
+then, enjoy yourself:
 
-### 0.3.4 2020.05.18
-> 类似下雨的小球很帅的哦
+```
 
-### 0.3.3 2020.05.15
-> 小球在跳动
+EasyHub.show('loading');
+EasyHub.show('loading', duration: Duration(seconds: 2));
 
-### 0.3.2 2020.05.13
-> 跳动的虫子
+///toast 2s later dismiss
+EasyHub.showInfoHub('network miss');
 
-### 0.3.1 2020.05.12
-> 游泳的小球，fix 一些 bug
+///default 2s
+EasyHub.showMsg('download success');
 
+///default 2s
+EasyHub.showErrorHub('An error occurred');
 
-### 0.3.0 2020.05.11
-> 添加跳动的矩形
+///default 2s
+EasyHub.showCompleteHub('done');
 
+/// only hub without msg
+/// when you did call EasyHub.dismiss(),it is dismissed;
+EasyHub.showHub();
 
-### 0.2.9 2020.05.11
-> 添加正方体移动效果
->
-> 添加魔球旋转效果
->
-> 添加跳舞的4个小球效果
->
-> 添加闪烁的九饼
->
-> 添加掉落的小球动画
->
-> 沙漏动画
+///dismiss
+EasyHub.dismiss();
 
-### 0.2.3 2020.05.07
-> 添加水滴
+/// custom your widget
+EasyHub.showCustom(Container(
+child: Text('my test'),
+));
+  
+```
 
-### 0.2.2 2020.05.06
-> 添加波浪动画
+### used just like it
+![](images/example.gif)
 
-### 0.2.1 2020.04.29
-> 添加钟摆动画，支持自定义球状半径和颜色
+### how to chose style
+#### light
+- `style:light`
+- `maskStyle:dark`
 
-### 0.2.0 2020.04.29
-> 添加多种动画
-
-### [0.0.5 -- 0.1.1] 2020.04.24
-> 更新备注和read me
+#### dark
+- `style:dark`
+- `maskStyle:light`
 
 
-### [0.0.3 -- 0.0.4] 2020.04.23
-> 1. 增加菊花转,适配android 和iOS
-> 2.增加错误和完成显示效果
-> 3. 增加实例消失函数
+### change Progress bar color when EasyHubIndicatorType.defaultType
 
-### [0.0.2] 2020.04.21
-> 优化文字动画分别展示
-> 增加隐藏所有hub
+```dart
+EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
+EasyHub.instance
+  ..backgroundColor = Colors.white
+  ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red)
+  ..style = EasyHubStyle.custom;
+EasyHub.showHub();
+```
 
-### [0.0.1] 2020.04.20
-> 添加浮窗，支持文字、进度条
+### other EasyHubIndicatorType,you only 
+
+```
+EasyHub.instance
+  ..backgroundColor = Colors.white
+  ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red);
+```
+ 
+
+
+
+### Renderings  Provide more than 30 animations 
+|![](images/default.GIF) default |![](images/CircularProgress.GIF) CircularProgress|![](images/error.PNG) showErrorHub| ![](images/complete.PNG) showComplateHub |![](images/line.GIF) LineProgress |
+|:-:|:-:|:-:|:-:|:-:|
+|![](images/CircularProgressEasyOutEasyIn.gif) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |![](images/beattingCircle.GIF) beattingCircle |![](images/singlebeattingCircle.GIF) singlebeattingCircle |
+![](images/beatingRects.GIF) beatingRects |![](images/rotatingCircles.GIF) rotatingCircles |![](images/rotatingDeformedCircles.GIF) rotatingDeformedCircles |![](images/rotatingTwoRect.GIF) rotatingTwoRect |![](images/rotatingTwoCircles.GIF) rotatingTwoCircles |
+|![](images/foldingRect.GIF) foldingRect |![](images/pendulumingBall.GIF) pendulumingBall |![](images/waves.GIF) waves |![](images/spitBubbles.GIF) spitBubbles |![](images/movingCube.GIF) movingCube |
+|![](images/rotatingTwoColorBall.GIF) rotatingTwoColorBall |![](images/dancingBall.GIF) dancingBall |![](images/flashingBalls.GIF) flashingBalls|![](images/fallingBall.GIF)fallingBall|![](images/hourglass.GIF)<br>hourglass|
+|![](images/dancingCube.GIF) dancingCube|![](images/swingingBall.GIF) swingingBall|![](images/creepingBug.GIF) creepingBug|![](images/rubberBand.GIF)rubberBand|![](images/rainCouplet.GIF)rainCouplet|
+|![](images/flipDiamond.GIF) flipDiamond|
+
+
+### Customize
+
+```
+/// just available when [EasyHubType] is [msg]
+
+  String msg;
+
+  /// msg of padding ,used for [EasyHubType.all] and [EasyHubType.msg]
+  EdgeInsets msgPadding;
+
+  /// msg of margin ,used for [EasyHubType.all] and [EasyHubType.msg]
+  EdgeInsets msgMargin;
+
+  ///  style of msg,used for [EasyHubStyle.custom]
+  TextStyle textStyle;
+
+  ///  color of msg font,used for [EasyHubStyle.custom]
+  ///  if textStyle is not null, it is ignored
+  Color fontColor;
+
+  ///maskStyle. default [EasyHubMaskStyle.dark]
+  EasyHubMaskStyle maskStyle;
+
+  /// center view style
+  /// default [EasyHubType.all]
+  EasyHubStyle style;
+
+  /// loading indicator type, default  [EasyHubType.all]
+  EasyHubType _easyHubType;
+
+  /// Animation type
+  /// see detail in [EasyHubIndicatorType]
+  /// when [EasyHubType] is [hub] or [all],it is available.
+
+  EasyHubIndicatorType indicatorType;
+
+  /// color of Mask,only used for [EasyHubMaskStyle.custom]
+  Color maskColor;
+
+  ///color of  main View background
+  /// used  for [EasyHubStyle.custom]
+  Color backgroundColor;
+
+  ///color of main animation background
+  ///used for most of  [EasyHubIndicatorType]
+  ///when animationWidget colors more than [two], ignored.
+  Color animationBackgroundColor;
+
+  /// main animation foreground color,type is [Animation<Color>]
+  /// like[AlwaysStoppedAnimation]
+  /// used for most of  [EasyHubIndicatorType]
+  ///  when animationWidget colors more than [two], ignored.
+  Animation<Color> animationForegroundColor;
+
+  /// animation progress value [bounds] is [0...1]
+  /// used for   [EasyHubIndicatorType.lineProgress]
+  /// TODO - [EasyHubIndicatorType.waves]
+  double progress; //进度条
+  /// display duration of [showSuccess] [showErrorHub] [showCompleteHub], default 2000ms.
+  Duration displayDuration;
+
+  /// touch action
+  /// you can set dismissed when touch
+  /// ```dark
+  /// EasyHub.instance.onTap = () {
+  ///        EasyHub.dismiss();
+  ///      };
+  /// ```
+  GestureTapCallback onTap;
+
+```
+
+
+## [喜欢的可以✨哦](https://github.com/ifgyong/flutter_easyHub)
+
+## License
+[MIT LICENSE](./LICENSE)
+
+## CHANGELOG
+
+
 
 
 

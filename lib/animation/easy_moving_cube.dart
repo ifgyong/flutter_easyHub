@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyMovingCube extends StatefulWidget {
-  double width; //正方形边长
-  Color topColor; //正方体顶部颜色
-  Color leftColor; //正方体侧边颜色
+  final double width; //正方形边长
+  final Color topColor; //正方体顶部颜色
+  final Color leftColor; //正方体侧边颜色
 
   ///   移动的散列正方体
   ///   double width; //正方形边长
@@ -89,24 +89,24 @@ class _EasyMovingCube extends State<EasyMovingCube>
     value = value == null ? 0 : value;
 
     double toLeft = 0.0;
-    bool now_to_left = true;
+    bool nowToLeft = true;
     if (value <= 0.5) {
       toLeft = value * 2;
-      now_to_left = true;
+      nowToLeft = true;
     } else {
-      now_to_left = false;
+      nowToLeft = false;
       toLeft = (value - 0.5) * 2;
     }
 //    toLeft = 0.5;  调试数据
 //    now_to_left = true; //是否正在向左上运动
     double left, top, x = 0, y = 0;
-    double dx = toLeft, dy = 0.5 * toLeft;
+    double dx = toLeft;
 
     switch (index) {
       case 0:
         left = 0;
         top = 0;
-        if (now_to_left) {
+        if (nowToLeft) {
           x = width * dx;
           y = 0;
         } else {
@@ -118,7 +118,7 @@ class _EasyMovingCube extends State<EasyMovingCube>
       case 1:
         left = pad;
         top = pad;
-        if (now_to_left) {
+        if (nowToLeft) {
           x = 0;
           y = 0;
         } else {
@@ -131,7 +131,7 @@ class _EasyMovingCube extends State<EasyMovingCube>
       case 2:
         left = 0;
         top = pad;
-        if (now_to_left) {
+        if (nowToLeft) {
           x = 0;
           y = 0;
         } else {
@@ -144,7 +144,7 @@ class _EasyMovingCube extends State<EasyMovingCube>
       case 3:
         left = pad;
         top = pad;
-        if (now_to_left) {
+        if (nowToLeft) {
           //向左移动
           x = -width * dx;
           y = 0;
@@ -170,7 +170,7 @@ class _EasyMovingCube extends State<EasyMovingCube>
       ),
     );
     list1.add(ts1);
-    Transform ts1_back = Transform(
+    Transform ts1back = Transform(
       transform: Matrix4.skewX(0.25 * pi)
         ..setTranslationRaw(x, y + width * 3, 0),
       child: Container(
@@ -179,8 +179,8 @@ class _EasyMovingCube extends State<EasyMovingCube>
         color: Color.fromRGBO(211, 211, 211, 1),
       ),
     );
-    list1.add(ts1_back);
-    Transform ts1_left = Transform(
+    list1.add(ts1back);
+    Transform ts1left = Transform(
       transform: Matrix4.skewY(0.25 * pi)..setTranslationRaw(x, y, 0),
       child: Container(
         width: height,
@@ -188,8 +188,8 @@ class _EasyMovingCube extends State<EasyMovingCube>
         color: leftColor,
       ),
     );
-    list1.add(ts1_left);
-    Transform ts1_font = Transform(
+    list1.add(ts1left);
+    Transform ts1font = Transform(
       transform: Matrix4.identity()..setTranslationRaw(x, y, 0),
       child: Container(
         margin: EdgeInsets.only(left: height, top: height),
@@ -198,7 +198,7 @@ class _EasyMovingCube extends State<EasyMovingCube>
         color: leftColor,
       ),
     );
-    list1.add(ts1_font);
+    list1.add(ts1font);
 
     Positioned positioned1 = Positioned(
       child: Stack(

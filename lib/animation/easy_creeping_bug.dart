@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EasyCreepingBug extends StatefulWidget {
-  double radius; //小球半径
-  List<Color> colors; //颜色 只能3个颜色
+  final double radius; //小球半径
+  final List<Color> colors; //颜色 只能3个颜色
 
   /// 跳动的虫子
   /// double radius; //小球半径
