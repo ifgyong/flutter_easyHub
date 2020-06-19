@@ -186,6 +186,8 @@ EasyHub.instance
 
 ```
 
+ 
+## [see example](./example/lib/main.dart)
 
 ## [喜欢的可以✨哦](https://github.com/ifgyong/flutter_easyHub)
 
@@ -193,6 +195,7 @@ EasyHub.instance
 [MIT LICENSE](./LICENSE)
 
 ## CHANGELOG
+[CHANGELOG](./CHANGELOG.md)
 
 
 
