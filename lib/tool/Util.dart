@@ -12,6 +12,7 @@ import 'package:flutter_easyhub/animation/easy_flashing_circles.dart';
 import 'package:flutter_easyhub/animation/easy_flip_diamond.dart';
 import 'package:flutter_easyhub/animation/easy_fliping_rect.dart';
 import 'package:flutter_easyhub/animation/easy_folding_rect.dart';
+import 'package:flutter_easyhub/animation/easy_fragment_rect.dart';
 import 'package:flutter_easyhub/animation/easy_hourglass_timer.dart';
 import 'package:flutter_easyhub/animation/easy_moving_cube.dart';
 import 'package:flutter_easyhub/animation/easy_pendulum_ball.dart';
@@ -248,6 +249,12 @@ class Tool {
         break;
       case EasyHubIndicatorType.flipDiamond:
         _indicator = EasyFlipDiamond(
+            color: EasyHub.instance.animationForegroundColor == null
+                ? Colors.orange
+                : EasyHub.instance.animationForegroundColor.value);
+        break;
+      case EasyHubIndicatorType.fragmentRect:
+        _indicator = EasyFragmentingRect(
             color: EasyHub.instance.animationForegroundColor == null
                 ? Colors.orange
                 : EasyHub.instance.animationForegroundColor.value);

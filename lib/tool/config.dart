@@ -36,6 +36,7 @@ enum EasyHubIndicatorType {
   rotatingTwoRect, //两个矩形追逐
   rotatingTwoCircles, //两个圆追逐
   foldingRect, //折叠矩形
+  fragmentRect, //碎片矩形
   pendulumingBall, //摆钟
   waves, //波浪
   spitBubbles, //水球 滴水

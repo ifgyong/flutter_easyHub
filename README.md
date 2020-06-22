@@ -121,7 +121,7 @@ EasyHub.instance
 |![](images/foldingRect.GIF) foldingRect |![](images/pendulumingBall.GIF) pendulumingBall |![](images/waves.GIF) waves |![](images/spitBubbles.GIF) spitBubbles |![](images/movingCube.GIF) movingCube |
 |![](images/rotatingTwoColorBall.GIF) rotatingTwoColorBall |![](images/dancingBall.GIF) dancingBall |![](images/flashingBalls.GIF) flashingBalls|![](images/fallingBall.GIF)fallingBall|![](images/hourglass.GIF)<br>hourglass|
 |![](images/dancingCube.GIF) dancingCube|![](images/swingingBall.GIF) swingingBall|![](images/creepingBug.GIF) creepingBug|![](images/rubberBand.GIF)rubberBand|![](images/rainCouplet.GIF)rainCouplet|
-|![](images/flipDiamond.GIF) flipDiamond|
+|![](images/flipDiamond.GIF) flipDiamond|![](images/fragmentRect.gif)fragmentRect|
 
 
 ### Customize

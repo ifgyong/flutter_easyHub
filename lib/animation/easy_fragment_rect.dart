@@ -157,4 +157,10 @@ class _EasyFragmentingRect extends State<EasyFragmentingRect>
     );
     return ts;
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }

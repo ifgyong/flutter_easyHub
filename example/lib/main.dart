@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/animation/easy_fragment_rect.dart';
 import 'dart:async';
 import 'package:flutter_easyhub/flutter_easy_hub.dart';
 
@@ -12,8 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      builder: (ctx, child) =>
-          FlutterEasyHub(child: MyHomePage(title: 'Flutter Demo Home Page')),
+      home: FlutterEasyHub(child: MyHomePage(title: 'Flutter Demo Home Page')),
     );
   }
 }
@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     '像下雨的小球',
     '翻转的线性菱形 仿新版头条哦',
     '线条进度条',
+    '碎片化矩形',
   ];
   @override
   Widget build(BuildContext context) {
@@ -74,21 +75,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Positioned.fill(
-            child: getList(),
-            bottom: bottomPadding + 100,
-          ),
-          Positioned(
-            child: _maskStyleWidget(),
-            left: 0,
-            right: 0,
-            bottom: 0,
-            height: 100 + bottomPadding,
-          ),
-        ],
+      body: FlutterEasyHub(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            Positioned.fill(
+              child: getList(),
+              bottom: bottomPadding + 100,
+            ),
+            Positioned(
+              child: _maskStyleWidget(),
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: 100 + bottomPadding,
+            ),
+          ],
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -204,6 +207,12 @@ class _MyHomePageState extends State<MyHomePage> {
     EasyHub.instance.onTap = () {
       EasyHub.dismiss();
     };
+//    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => NewPage()));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) => NewPage(
+              title: 'demo',
+            )));
+//    return;
     switch (index - 1) {
       case -1:
         EasyHub.dismiss();
@@ -558,28 +567,14 @@ class _MyHomePageState extends State<MyHomePage> {
           EasyHub.showProgress('${(v * 100).toStringAsFixed(2)}%', value: v);
         });
         break;
-//      case 36: //下雨
-//        EasyHub.instance.indicatorType =
-//            EasyHubIndicatorType.circularProgressEasy;
-//        EasyHub.instance
-//          ..animationForegroundColor =
-//              new AlwaysStoppedAnimation(Colors.lightBlueAccent)
-//          ..animationBackgroundColor = Colors.orangeAccent
-//          ..backgroundColor = Colors.white;
-//        v = 0;
-//        t = Timer.periodic(
-//            Duration(
-//              milliseconds: 160,
-//            ), (_t) {
-//          if (v >= 1.0) {
-//            t?.cancel();
-//            EasyHub.dismiss();
-//          } else {
-//            v += 0.05;
-//          }
-//          EasyHub.showProgress('${(v * 100).toStringAsFixed(2)}%', value: v);
-//        });
-//        break;
+      case 36: //碎片化矩形
+        EasyHub.instance.indicatorType = EasyHubIndicatorType.fragmentRect;
+        EasyHub.instance
+          ..animationForegroundColor = new AlwaysStoppedAnimation(Colors.black)
+          ..animationBackgroundColor = Colors.white
+          ..backgroundColor = Colors.white;
+        EasyHub.showHub();
+        break;
     }
 
 //    Future.delayed(Duration(seconds: 2)).then((v) {
@@ -630,14 +625,30 @@ class NewPage extends StatefulWidget {
 
 class _NewPage extends State<NewPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: WillPopScope(
-          child: Container(
-            color: Colors.white,
+          child: FlutterEasyHub(
+            child: Container(
+              color: Colors.white,
+              child: FlatButton(
+                child: EasyFragmentingRect(
+                  color: Colors.orange,
+                  width: 120,
+                ),
+                onPressed: () {
+                  _show();
+                },
+              ),
+            ),
           ),
           // ignore: missing_return
           onWillPop: () async {
@@ -645,5 +656,14 @@ class _NewPage extends State<NewPage> {
             return true;
           }),
     );
+  }
+
+  void _show() {
+    EasyHub.instance.indicatorType = EasyHubIndicatorType.fragmentRect;
+    EasyHub.instance
+      ..animationForegroundColor = new AlwaysStoppedAnimation(Colors.black)
+      ..animationBackgroundColor = Colors.white
+      ..backgroundColor = Colors.white;
+    EasyHub.showHub();
   }
 }
