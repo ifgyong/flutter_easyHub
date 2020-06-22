@@ -114,7 +114,7 @@ EasyHub.instance
 
 
 ### Renderings  Provide more than 30 animations 
-|![](images/default.GIF) default |![](images/CircularProgress.GIF) CircularProgress|![](images/error.PNG) showErrorHub| ![](images/complete.PNG) showComplateHub |![](images/line.GIF) LineProgress |
+|![](images/default.GIF) default |![](images/CircularProgress.GIF) CircularProgress|![](images/errorHub.PNG) showErrorHub| ![](images/complete.PNG) showComplateHub |![](images/line.GIF) LineProgress |
 |:-:|:-:|:-:|:-:|:-:|
 |![](images/CircularProgressEasyOutEasyIn.GIF) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |![](images/beattingCircle.GIF) beattingCircle |![](images/singlebeattingCircle.GIF) singlebeattingCircle |
 ![](images/beatingRects.GIF) beatingRects |![](images/rotatingCircles.GIF) rotatingCircles |![](images/rotatingDeformedCircles.GIF) rotatingDeformedCircles |![](images/rotatingTwoRect.GIF) rotatingTwoRect |![](images/rotatingTwoCircles.GIF) rotatingTwoCircles |
