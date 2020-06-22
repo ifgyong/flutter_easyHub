@@ -207,11 +207,11 @@ class _MyHomePageState extends State<MyHomePage> {
     EasyHub.instance.onTap = () {
       EasyHub.dismiss();
     };
-//    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => NewPage()));
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (BuildContext context) => NewPage(
-              title: 'demo',
-            )));
+////    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => NewPage()));
+//    Navigator.of(context).push(MaterialPageRoute(
+//        builder: (BuildContext context) => NewPage(
+//              title: 'demo',
+//            )));
 //    return;
     switch (index - 1) {
       case -1:
