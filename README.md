@@ -116,7 +116,7 @@ EasyHub.instance
 ### Renderings  Provide more than 30 animations 
 |![](images/default.GIF) default |![](images/CircularProgress.GIF) CircularProgress|![](images/error.PNG) showErrorHub| ![](images/complete.PNG) showComplateHub |![](images/line.GIF) LineProgress |
 |:-:|:-:|:-:|:-:|:-:|
-|![](images/CircularProgressEasyOutEasyIn.gif) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |![](images/beattingCircle.GIF) beattingCircle |![](images/singlebeattingCircle.GIF) singlebeattingCircle |
+|![](images/CircularProgressEasyOutEasyIn.GIF) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |![](images/beattingCircle.GIF) beattingCircle |![](images/singlebeattingCircle.GIF) singlebeattingCircle |
 ![](images/beatingRects.GIF) beatingRects |![](images/rotatingCircles.GIF) rotatingCircles |![](images/rotatingDeformedCircles.GIF) rotatingDeformedCircles |![](images/rotatingTwoRect.GIF) rotatingTwoRect |![](images/rotatingTwoCircles.GIF) rotatingTwoCircles |
 |![](images/foldingRect.GIF) foldingRect |![](images/pendulumingBall.GIF) pendulumingBall |![](images/waves.GIF) waves |![](images/spitBubbles.GIF) spitBubbles |![](images/movingCube.GIF) movingCube |
 |![](images/rotatingTwoColorBall.GIF) rotatingTwoColorBall |![](images/dancingBall.GIF) dancingBall |![](images/flashingBalls.GIF) flashingBalls|![](images/fallingBall.GIF)fallingBall|![](images/hourglass.GIF)<br>hourglass|

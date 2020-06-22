@@ -201,7 +201,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int errorOrInfo = 0;
   void show(int index) async {
     await EasyHub.dismiss();
-    Duration delay = const Duration(seconds: 2);
     EasyHub.instance.onTap = () {
       EasyHub.dismiss();
     };
@@ -591,34 +590,34 @@ class _MyHomePageState extends State<MyHomePage> {
   double v = 0;
 }
 
-void _display() {
-  EasyHub.show('loading');
-  EasyHub.show('loading', duration: Duration(seconds: 2));
-
-  ///toast 2s later dismiss
-  EasyHub.showInfoHub('network miss');
-
-  ///default 2s
-  EasyHub.showMsg('download success');
-
-  ///default 2s
-  EasyHub.showErrorHub('An error occurred');
-
-  ///default 2s
-  EasyHub.showCompleteHub('done');
-
-  /// only hub without msg
-  /// when you did call EasyHub.dismiss(),it is dismissed;
-  EasyHub.showHub();
-
-  ///dismiss
-  EasyHub.dismiss();
-
-  /// custom your widget
-  EasyHub.showCustom(Container(
-    child: Text('my test'),
-  ));
-}
+//void _display() {
+//  EasyHub.show('loading');
+//  EasyHub.show('loading', duration: Duration(seconds: 2));
+//
+//  ///toast 2s later dismiss
+//  EasyHub.showInfoHub('network miss');
+//
+//  ///default 2s
+//  EasyHub.showMsg('download success');
+//
+//  ///default 2s
+//  EasyHub.showErrorHub('An error occurred');
+//
+//  ///default 2s
+//  EasyHub.showCompleteHub('done');
+//
+//  /// only hub without msg
+//  /// when you did call EasyHub.dismiss(),it is dismissed;
+//  EasyHub.showHub();
+//
+//  ///dismiss
+//  EasyHub.dismiss();
+//
+//  /// custom your widget
+//  EasyHub.showCustom(Container(
+//    child: Text('my test'),
+//  ));
+//}
 
 class NewPage extends StatefulWidget {
   NewPage({Key key, this.title}) : super(key: key);

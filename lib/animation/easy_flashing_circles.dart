@@ -74,7 +74,7 @@ class _EasyFlashCircles extends State<EasyFlashCircles>
   Positioned positioned(int index, Color color, double radius) {
     Positioned p1 = Positioned(
       left: (index % 3) * 3 * radius,
-      top: (index / 3).toInt() * 3 * radius,
+      top: index ~/ 3 * 3 * radius,
       child: Container(
         width: radius * 2,
         height: radius * 2,

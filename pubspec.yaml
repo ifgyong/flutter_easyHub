@@ -2,7 +2,7 @@ name: flutter_easyhub
 description: easy for hub,
   When you do a lot of calculation, you need this animation. When you make a network error or finish downloading files, you also need this animation。
 
-version: 1.0.1
+version: 1.0.1+0.3
 homepage: http://www.fgyong.cn
 author: fgyong
 repository: https://github.com/ifgyong/flutter_easyHub

@@ -130,18 +130,21 @@ class EasyHub {
     duration ??= _getInstance().displayDuration;
 
     EasyHub.instance._showError(msg, duration: duration);
+    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*展示完成 hub*/
   static void showCompleteHub(String msg, {Duration duration}) {
     duration ??= _getInstance().displayDuration;
     EasyHub.instance._showComplate(msg, duration: duration);
+    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*展示完成 hub*/
   static void showInfoHub(String msg, {Duration duration}) {
     duration ??= _getInstance().displayDuration;
     EasyHub.instance._showInfo(msg, duration: duration);
+    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*对外公布接口 展示 加载文本*/
