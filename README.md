@@ -120,10 +120,10 @@ EasyHub.instance
 |![](images/line.GIF) LineProgress |![](images/CircularProgressEasyOutEasyIn.GIF) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |
 |![](images/beattingCircle.GIF) beattingCircle |![](images/singlebeattingCircle.GIF) singlebeattingCircle |![](images/beatingRects.GIF) beatingRects |![](images/rotatingCircles.GIF) rotatingCircles |
 |![](images/rotatingDeformedCircles.GIF) rotatingDeformedCircles |![](images/rotatingTwoRect.GIF) rotatingTwoRect |![](images/rotatingTwoCircles.GIF) rotatingTwoCircles |![](images/foldingRect.GIF) foldingRect |
-|![](images/pendulumingBall.GIF) pendulumingBall |![](images/waves.GIF) waves |![](images/spitBubbles.GIF) spitBubbles |![](images/movingCube.GIF) movingCube |
+|![](images/pendulumingBall.GIF) <br> pendulumingBall |![](images/waves.GIF) <br>waves |![](images/spitBubbles.GIF) spitBubbles |![](images/movingCube.GIF) movingCube |
 |![](images/rotatingTwoColorBall.GIF) rotatingTwoColorBall |![](images/dancingBall.GIF) dancingBall |![](images/flashingBalls.GIF) flashingBalls|![](images/fallingBall.GIF)fallingBall|
 |![](images/hourglass.GIF)<br>hourglass|![](images/dancingCube.GIF) dancingCube|![](images/swingingBall.GIF) swingingBall|![](images/creepingBug.GIF) creepingBug|
-|![](images/rubberBand.GIF)rubberBand|![](images/rainCouplet.GIF)rainCouplet|![](images/flipDiamond.GIF) flipDiamond|![](images/fragmentRect.gif)fragmentRect|
+|![](images/rubberBand.GIF)<br> rubberBand|![](images/rainCouplet.GIF)rainCouplet|![](images/flipDiamond.GIF) flipDiamond|![](images/fragmentRect.gif) <br>fragmentRect|
 
 
 ### Customize
