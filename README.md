@@ -200,6 +200,11 @@ EasyHub.instance
 
  
 ## [see example](./example/lib/main.dart)
+##  enjoy youself with animation if you only like animations;
+
+ > any animation is widget,you can use it ,[see detail](https://github.com/ifgyong/flutter_easyHub/blob/master/lib/tool/Util.dart)
+
+ 
 
 ## [喜欢的可以✨哦](https://github.com/ifgyong/flutter_easyHub)
 
