@@ -9,12 +9,13 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FlutterEasyHub(child: MyHomePage(title: 'Flutter Demo Home Page')),
+    return FlutterEasyHub(
+      child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: MyHomePage(title: 'Flutter Demo Home Page')),
     );
   }
 }
@@ -234,8 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
         EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
         EasyHub.instance
           ..backgroundColor = Colors.white
-          ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red)
-          ..style = EasyHubStyle.custom;
+          ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red);
         EasyHub.showHub();
         break;
       case 3:

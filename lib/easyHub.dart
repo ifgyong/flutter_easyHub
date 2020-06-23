@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyhub/tool/Util.dart';
@@ -40,7 +42,7 @@ class EasyHub {
   EasyHubMaskStyle maskStyle;
 
   /// center view style
-  /// default [EasyHubType.all]
+  /// default [EasyHubStyle.all]
   EasyHubStyle style;
 
   /// loading indicator type, default  [EasyHubType.all]
@@ -78,6 +80,9 @@ class EasyHub {
   /// display duration of [showSuccess] [showErrorHub] [showCompleteHub], default 2000ms.
   Duration displayDuration;
 
+  /// used for hide hub
+  Timer _timer;
+
   /// touch action
   /// you can set dismissed when touch
   /// ```dark
@@ -103,7 +108,7 @@ class EasyHub {
     indicatorType = EasyHubIndicatorType.circularProgressEasy;
     msgPadding = EdgeInsets.all(15);
     displayDuration = Duration(seconds: 2);
-    style = EasyHubStyle.light;
+    style = EasyHubStyle.dark;
     maskStyle = EasyHubMaskStyle.dark;
   }
 /*对外公布接口 展示 文字 和动画*/
@@ -130,28 +135,24 @@ class EasyHub {
     duration ??= _getInstance().displayDuration;
 
     EasyHub.instance._showError(msg, duration: duration);
-    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*展示完成 hub*/
   static void showCompleteHub(String msg, {Duration duration}) {
     duration ??= _getInstance().displayDuration;
     EasyHub.instance._showComplate(msg, duration: duration);
-    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*展示完成 hub*/
   static void showInfoHub(String msg, {Duration duration}) {
     duration ??= _getInstance().displayDuration;
     EasyHub.instance._showInfo(msg, duration: duration);
-    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   /*对外公布接口 展示 加载文本*/
   static void showMsg(String msg, {Duration duration}) {
     duration ??= _getInstance().displayDuration;
     EasyHub.instance._showMsg(msg);
-    if (duration != null) EasyHub.instance._dismiss(delay: duration);
   }
 
   //展示自定义widget
@@ -160,15 +161,20 @@ class EasyHub {
   }
 
 /*对外公布接口 消失*/
-  static Future<void> dismiss(
-      {Duration delay = const Duration(milliseconds: 0)}) async {
+  static Future<void> dismiss({Duration delay}) async {
     return EasyHub.instance._dismiss(delay: delay);
   }
 
-  Future<void> _dismiss(
-      {Duration delay = const Duration(milliseconds: 0)}) async {
-    await Future.delayed(delay);
-    EasyHub.instance._clear();
+  Future<void> _dismiss({Duration delay}) async {
+    if (delay != null) {
+      _getInstance()._timer = Timer.periodic(delay, (timer) {
+        timer?.cancel();
+        _getInstance()._clear();
+      });
+    } else {
+      _cancelTimer();
+      EasyHub.instance._clear();
+    }
     return;
   }
 
@@ -279,6 +285,7 @@ class EasyHub {
         centerWidget = _getInstance()._customWidget;
         break;
     }
+    _cancelTimer();
     _getInstance()._clear();
 
     OverlayEntry overlayEntry =
@@ -286,6 +293,13 @@ class EasyHub {
 
     Overlay.of(_getInstance().context).insert(overlayEntry);
     _getInstance()._entry = overlayEntry;
+    if (duration != null) {
+      _getInstance()._timer = Timer.periodic(duration, (timer) {
+        timer?.cancel();
+        _getInstance()._clear();
+        print('timer canceld ');
+      });
+    }
   }
 
   OverlayEntry _getEntry({
@@ -312,5 +326,10 @@ class EasyHub {
       _getInstance()._entry?.remove();
       _getInstance()._entry = null;
     }
+  }
+
+  void _cancelTimer() {
+    _getInstance()._timer?.cancel();
+    _getInstance()._timer = null;
   }
 }

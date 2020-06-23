@@ -69,9 +69,10 @@ child: Text('my test'),
 ```
 
 ### used just like it
-![](images/example.gif)
-![](images/example2.gif)
-![](images/example3.gif)
+|![](images/example.gif)|![](images/example2.gif)|
+|:--:|:--:|
+|![](images/example3.gif)|![](images/all.gif)|
+
 
 ### how to chose style
 #### light
