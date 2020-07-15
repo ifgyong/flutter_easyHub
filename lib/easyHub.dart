@@ -166,13 +166,13 @@ class EasyHub {
   }
 
   Future<void> _dismiss({Duration delay}) async {
+    _cancelTimer();
     if (delay != null) {
       _getInstance()._timer = Timer.periodic(delay, (timer) {
         timer?.cancel();
         _getInstance()._clear();
       });
     } else {
-      _cancelTimer();
       EasyHub.instance._clear();
     }
     return;
@@ -297,7 +297,6 @@ class EasyHub {
       _getInstance()._timer = Timer.periodic(duration, (timer) {
         timer?.cancel();
         _getInstance()._clear();
-        print('timer canceld ');
       });
     }
   }

@@ -35,7 +35,7 @@ class _NewPage2 extends State<NewPage2> {
           color: Colors.white,
           child: Column(
             children: <Widget>[
-              FlatButton(
+              Container(
                 child: EasyFragmentingRect(
                   color: Colors.orange,
                   width: 120,
@@ -74,30 +74,19 @@ class _NewPage2 extends State<NewPage2> {
         ))
       ],
     );
-    return FlutterEasyHub(
-      child: Material(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
-          ),
-          body: WillPopScope(
-              child: s,
-              // ignore: missing_return
-              onWillPop: () async {
-                EasyHub.dismiss();
-                return true;
-              }),
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
+        body: WillPopScope(
+            child: s,
+            // ignore: missing_return
+            onWillPop: () async {
+              EasyHub.dismiss();
+              return true;
+            }),
       ),
     );
-  }
-
-  void _show() {
-    EasyHub.instance.indicatorType = EasyHubIndicatorType.fragmentRect;
-    EasyHub.instance
-      ..animationForegroundColor = new AlwaysStoppedAnimation(Colors.black)
-      ..animationBackgroundColor = Colors.white
-      ..backgroundColor = Colors.white;
-    EasyHub.showHub();
   }
 }

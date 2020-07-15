@@ -218,8 +218,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: 'demo',
                 )));
         return;
-        EasyHub.dismiss();
-        break;
       case 0:
         EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
         EasyHub.instance.backgroundColor = Colors.black12;

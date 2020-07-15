@@ -2,23 +2,23 @@
 ![](https://badgen.net/github/license/micromatch/micromatch)
 ![](https://img.shields.io/pub/v/flutter_easyhub)
 
-> A pure flutter, supporting android and iOS, no native code, simpler loading animation, more than 20 existing animations, support for custom foreground and background colors.
+> 简单易用的toast动画，支持iOS和android，支持widget添加，纯flutter，现在有近30种动画可供选择。
 
-
-|[中文文档](../README_CN.md)|English documentation|
+|中文文档|[English documentation](../README.md)|
 |:-:|:-:|
 
-## easy use to use this package as a library
+
+## 添加依赖
 
 ```dart
 dependencies:
-  flutter_easyhub: ^1.0.0
+  flutter_easyhub: ^*.*.*
 
 $ flutter pub get
 
 import 'package:flutter_easyhub/flutter_easyhub.dart';
 ```
-### how to use
+### 简单使用
 ```dart
 class MyApp extends StatelessWidget {
   @override
@@ -36,33 +36,32 @@ class MyApp extends StatelessWidget {
 ```
 
  
-then, enjoy yourself:
+可以开心的使用了😄:
 
 ```dart
 
 EasyHub.show('loading');
 EasyHub.show('loading', duration: Duration(seconds: 2));
 
-///toast 2s later dismiss
+///默认2秒消失
 EasyHub.showInfoHub('network miss');
 
-///default 2s
+///默认2秒消失
 EasyHub.showMsg('download success');
 
-///default 2s
+///默认2秒消失
 EasyHub.showErrorHub('An error occurred');
 
-///default 2s
+///默认2秒消失
 EasyHub.showCompleteHub('done');
 
-/// only hub without msg
-/// when you did call EasyHub.dismiss(),it is dismissed;
+/// 当你紧紧使用动画，那么请使用`EasyHub.dismiss()`来隐藏它。
 EasyHub.showHub();
 
-///dismiss
+///隐藏
 EasyHub.dismiss();
 
-/// custom your widget
+/// 自定义小部件
 EasyHub.showCustom(Container(
 child: Text('my test'),
 ));
@@ -75,17 +74,17 @@ child: Text('my test'),
 |![](images/example3.gif)|![](images/all.gif)|
 
 
-### how to chose style
-#### light
+### `style`如何搭配更香呢
+#### 白天模式
 - `style:light`
 - `maskStyle:dark`
 
-#### dark
+#### 晚上模式
 - `style:dark`
 - `maskStyle:light`
 
 
-### change Progress bar color when EasyHubIndicatorType.defaultType
+### 改变进度条颜色 当是默认的type时候`EasyHubIndicatorType.defaultType`
 
 ```dart
 EasyHub.instance.indicatorType = EasyHubIndicatorType.defaultType;
@@ -96,14 +95,14 @@ EasyHub.instance
 EasyHub.showHub();
 ```
 
-### other EasyHubIndicatorType,you only 
+### 其他的动画类型 只有前景色和背景可用哦
 
 ```dart
 EasyHub.instance
   ..backgroundColor = Colors.white
   ..animationForegroundColor = AlwaysStoppedAnimation(Colors.red);
 ```
-### when you want touch widget,then hiden it.
+### 用户点击 动画或背景消失
 
 ```dart 
 /// only used for maskStyle!= none.
@@ -115,7 +114,7 @@ EasyHub.instance
 
 
 
-### Renderings  Provide more than 30 animations 
+### 30种动画效果 
 |![](images/default.GIF) default |![](images/CircularProgress.GIF) CircularProgress|![](images/errorHub.PNG) showErrorHub| ![](images/complete.PNG) showComplateHub |
 |:-:|:-:|:-:|:-:|
 |![](images/line.GIF) LineProgress |![](images/CircularProgressEasyOutEasyIn.GIF) CircularProgressEasyOutEasyIn |![](images/CircularProgressEasy.GIF) CircularProgressEasy |![](images/singleFlipingRect.GIF) singleFlipingRect |
@@ -127,69 +126,65 @@ EasyHub.instance
 |![](images/rubberBand.GIF)<br> rubberBand|![](images/rainCouplet.GIF)rainCouplet|![](images/flipDiamond.GIF) flipDiamond|![](images/fragmentRect.gif) <br>fragmentRect|
 
 
-### Customize
+### 属性
 
 ```dart
-/// just available when [EasyHubType] is [msg]
+/// 当EasyHubType是 msg可用
 
   String msg;
 
-  /// msg of padding ,used for [EasyHubType.all] and [EasyHubType.msg]
+  /// msg的内边框，当是[EasyHubType.all] and [EasyHubType.msg]可用
+  /// 
   EdgeInsets msgPadding;
 
-  /// msg of margin ,used for [EasyHubType.all] and [EasyHubType.msg]
+  /// msg的外边框   ,当[EasyHubType.all] and [EasyHubType.msg]可用
   EdgeInsets msgMargin;
 
-  ///  style of msg,used for [EasyHubStyle.custom]
+  /// 自定义文本样式，紧紧[EasyHubStyle.custom]可用
   TextStyle textStyle;
 
-  ///  color of msg font,used for [EasyHubStyle.custom]
-  ///  if textStyle is not null, it is ignored
+ 
+  /// 文本的颜色，仅仅EasyHubStyle.custom 可用，如果本文设置了textStyle，则被忽略
   Color fontColor;
 
-  ///maskStyle. default [EasyHubMaskStyle.dark]
+  /// 遮罩类型 默认[EasyHubMaskStyle.dark]
   EasyHubMaskStyle maskStyle;
 
-  /// center view style
-  /// default [EasyHubType.all]
+  /// 展示 动画和msg的类型 默认是都展示
   EasyHubStyle style;
 
   /// loading indicator type, default  [EasyHubType.all]
+  /// 动画类型 默认是
   EasyHubType _easyHubType;
 
-  /// Animation type
-  /// see detail in [EasyHubIndicatorType]
-  /// when [EasyHubType] is [hub] or [all],it is available.
-
+  
+ /// 动画类型 
   EasyHubIndicatorType indicatorType;
 
-  /// color of Mask,only used for [EasyHubMaskStyle.custom]
+  /// 当EasyHubMaskStyle.custom，设置遮罩颜色
   Color maskColor;
 
-  ///color of  main View background
-  /// used  for [EasyHubStyle.custom]
+  /// 当EasyHubMaskStyle.custom，设置背景颜色
   Color backgroundColor;
 
-  ///color of main animation background
-  ///used for most of  [EasyHubIndicatorType]
-  ///when animationWidget colors more than [two], ignored.
+
+  /// 动画背景 在大多数[EasyHubIndicatorType]可用，当动画颜色多于2中时，则该参数被忽略
   Color animationBackgroundColor;
 
-  /// main animation foreground color,type is [Animation<Color>]
-  /// like[AlwaysStoppedAnimation]
-  /// used for most of  [EasyHubIndicatorType]
-  ///  when animationWidget colors more than [two], ignored.
+
+  /// 动画前景色 类型是[Animation<Color>]
+  /// 当动画颜色多于2中时，则该参数被忽略
   Animation<Color> animationForegroundColor;
 
-  /// animation progress value [bounds] is [0...1]
-  /// used for   [EasyHubIndicatorType.lineProgress]
+  /// 动画的value范围是[0...1]
+  /// 仅仅在type是 [EasyHubIndicatorType.lineProgress]可用
   /// TODO - [EasyHubIndicatorType.waves]
   double progress; //进度条
   /// display duration of [showSuccess] [showErrorHub] [showCompleteHub], default 2000ms.
+  /// 默认展示msg 时间 ，默认是2000ms
   Duration displayDuration;
 
-  /// touch action
-  /// you can set dismissed when touch
+  /// 点击消失
   /// ```dark
   /// EasyHub.instance.onTap = () {
   ///        EasyHub.dismiss();
@@ -200,19 +195,19 @@ EasyHub.instance
 ```
 
  
-## [see example](./example/lib/main.dart)
-##  enjoy youself with animation if you only like animations;
+## [查看例子](./example/lib/main.dart)
+##  仅仅使用动画效果
 
- > any animation is widget,you can use it ,[see detail](https://github.com/ifgyong/flutter_easyHub/blob/master/lib/tool/Util.dart)
+ > 如果仅仅想使用动画，请看 仔细看下该文件。[see detail](https://github.com/ifgyong/flutter_easyHub/blob/master/lib/tool/Util.dart)
 
  
 
-## [喜欢的可以✨哦](https://github.com/ifgyong/flutter_easyHub)
+## [喜欢的可以✨✨✨](https://github.com/ifgyong/flutter_easyHub)
 
-## License
+## 证书
 [MIT LICENSE](./LICENSE)
 
-## CHANGELOG
+## 版本记录
 [CHANGELOG](./CHANGELOG.md)
 
 
