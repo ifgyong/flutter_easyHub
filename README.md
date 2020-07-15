@@ -5,7 +5,7 @@
 > A pure flutter, supporting android and iOS, no native code, simpler loading animation, more than 20 existing animations, support for custom foreground and background colors.
 
 
-|[中文文档](../README_CN.md)|English documentation|
+|[中文文档](README_CN.md)|English documentation|
 |:-:|:-:|
 
 ## easy use to use this package as a library
