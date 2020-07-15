@@ -4,7 +4,7 @@
 
 > 简单易用的toast动画，支持iOS和android，支持widget添加，纯flutter，现在有近30种动画可供选择。
 
-|中文文档|[English documentation](../README.md)|
+|中文文档|[English documentation](README.md)|
 |:-:|:-:|
 
 
