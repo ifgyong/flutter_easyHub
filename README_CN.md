@@ -16,7 +16,7 @@ dependencies:
 
 $ flutter pub get
 
-import 'package:flutter_easyhub/flutter_easyhub.dart';
+import 'package:flutter_easyhub/flutter_easy_hub.dart';
 ```
 ### 简单使用
 ```dart
