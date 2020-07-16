@@ -1,4 +1,4 @@
-# fluttereasyhub
+# flutter_easyhub
 ![](https://badgen.net/github/license/micromatch/micromatch)
 ![](https://img.shields.io/pub/v/flutter_easyhub)
 
