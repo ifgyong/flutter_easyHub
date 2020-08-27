@@ -12,7 +12,7 @@
 
 ```dart
 dependencies:
-  flutter_easyhub: ^1.0.0
+  flutter_easyhub: ^1.0.1
 
 $ flutter pub get
 
