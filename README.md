@@ -216,6 +216,8 @@ EasyHub.instance
 [CHANGELOG](./CHANGELOG.md)
 
 
+## 推荐
+- [小而美的过度动画库 flutter_transition_animation](https://github.com/ifgyong/flutter_transition_animation)
 
 
 
