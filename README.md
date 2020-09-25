@@ -218,6 +218,6 @@ EasyHub.instance
 
 ## 推荐
 - [小而美的过度动画库 flutter_transition_animation](https://github.com/ifgyong/flutter_transition_animation)
-- [好用到爆炸的QQ气泡效果功能丰富](https://github.com/ifgyong/flutter_qq_bubble)
+- [好用到爆炸的QQ气泡效果功能丰富  flutter_qq_bubble](https://github.com/ifgyong/flutter_qq_bubble)
 
 
