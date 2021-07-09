@@ -172,15 +172,13 @@ class Tool {
         );
         break;
       case EasyHubIndicatorType.dancingBalls: //跳动的魔球
-        _indicator = EasyDancingBall(
-          radius: 10,
-        );
-        return Container(
-          padding: EasyHubTheme.hubPadding,
-          child: _indicator,
-          width: 150,
-          height: 120,
-        );
+
+        _indicator = Container(
+            width: 121,
+            height: 100,
+            child: EasyDancingBall(
+              radius: 11,
+            ));
         break;
       case EasyHubIndicatorType.flashingBalls: //跳动的九饼
         _indicator = EasyFlashCircles(
@@ -209,10 +207,10 @@ class Tool {
 
       case EasyHubIndicatorType.dancingCube: //矩形跳舞
         _indicator = Container(
-            width: 120,
+            width: 121,
             height: 100,
             child: EasyDancingCube(
-              radius: 12,
+              radius: 11,
             ));
         break;
 

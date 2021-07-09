@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyhub/animation/easy_fragment_rect.dart';
 import 'package:flutter_easyhub/flutter_easy_hub.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class NewPage2 extends StatefulWidget {
   NewPage2({Key key, this.title}) : super(key: key);
@@ -41,7 +40,7 @@ class _NewPage2 extends State<NewPage2> {
                   width: 120,
                 ),
               ),
-              FlatButton(
+              TextButton(
                 child: Text('push'),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -50,22 +49,22 @@ class _NewPage2 extends State<NewPage2> {
                           )));
                 },
               ),
-              FlatButton(
+              TextButton(
                 child: Text('showError'),
                 onPressed: () {
                   EasyHub.showErrorHub('error');
                 },
               ),
-              FlatButton(
+              TextButton(
                 child: Text('info'),
                 onPressed: () {
                   EasyHub.showInfoHub('info');
                 },
               ),
-              FlatButton(
+              TextButton(
                 child: Text('complete'),
                 onPressed: () {
-                  EasyLoading.showToast('status');
+                  EasyHub.showCompleteHub('status');
                   print('state:$context');
                 },
               )

@@ -24,7 +24,7 @@ class _EasyDancingBall extends State<EasyDancingBall>
         vsync: this,
         duration: Duration(milliseconds: 1600),
         lowerBound: 0,
-        upperBound: 1.0)
+        upperBound: 0.9)
       ..addStatusListener((s) {
         if (s == AnimationStatus.completed) {
           _animationController.reset();
@@ -45,8 +45,8 @@ class _EasyDancingBall extends State<EasyDancingBall>
 
   @override
   Widget build(BuildContext context) {
-    double radius = widget.radius == null ? 15 : widget.radius,
-        width = radius * 11;
+    double radius = widget.radius == null ? 15 : widget.radius;
+    double width = radius * 11;
     Color color1 = Color.fromRGBO(53, 152, 192, 1.0);
     Color color2 = Color.fromRGBO(209, 64, 62, 1.0);
     Color color3 = Colors.orange;
@@ -59,8 +59,7 @@ class _EasyDancingBall extends State<EasyDancingBall>
       animation: _curvedAnimation,
       builder: (context, child) {
         List<Widget> list;
-        double v = _curvedAnimation.value;
-//        tag = 3;
+        double v = _animationController.value;
         switch (tag) {
           case 0:
             color1 = c1;
@@ -94,31 +93,29 @@ class _EasyDancingBall extends State<EasyDancingBall>
 
 //        double v2 = _curvedAnimation.value;
 
-        double maxRadiusJump = radius * 3;
-        double x1 = v * (width - radius * 2);
-
-        double x2 = -maxRadiusJump, y2 = 0;
+        double x1 = v / 0.9 * (width - radius * 2);
+        double x2 = 0, y2 = 0;
         double x3 = 0, y3 = 0;
         double x4 = 0, y4 = 0;
-//        v = 0.0;
-        if (v <= 0.33) {
-          x2 = -radius * 3 * v / 0.33;
-          y2 = -radius * 2 * sin(v / 0.33 * pi);
-        } else if (v <= 0.66) {
-          x3 = -radius * 3 * v / 0.33 + maxRadiusJump;
-          y3 = radius * 2 * sin(v / 0.33 * pi);
-        } else if (v <= 1) {
+        if (v <= 0.3) {
+          x2 = -radius * 3 * v / 0.3;
+          y2 = radius * 2.2 * sin((v + 0.3) / 0.3 * pi);
+        } else if (v <= 0.6) {
+          x2 = -radius * 3;
+          x3 = -radius * 3 * (v - 0.3) / 0.3;
+          y3 = radius * 2.2 * sin(v / 0.3 * pi);
+        } else if (v <= 0.9) {
+          x2 = -radius * 3;
           x3 = -radius * 3;
-
-          x4 = -radius * 3 * (v - 0.66) / 0.33;
-          y4 = -radius * 2 * sin((v - 0.66) / 0.33 * pi);
+          x4 = -radius * 3 * (v - 0.6) / 0.3;
+          y4 = radius * 2.2 * sin((v - 0.3) / 0.3 * pi);
         }
 
         Positioned p1 = Positioned(
-            left: 0,
+            left: x1,
             top: 0,
             child: Transform(
-              transform: Matrix4.identity()..setTranslationRaw(x1, 0, 0),
+              transform: Matrix4.identity(),
               child: Container(
                 width: radius * 2,
                 height: radius * 2,
@@ -131,7 +128,7 @@ class _EasyDancingBall extends State<EasyDancingBall>
             ));
 
         Positioned p2 = Positioned(
-            left: (width - radius * 8) / 3.0 + radius * 2,
+            left: radius * 3,
             child: Transform(
               transform: Matrix4.identity()..setTranslationRaw(x2, y2, 0),
               child: Container(
@@ -146,7 +143,7 @@ class _EasyDancingBall extends State<EasyDancingBall>
             ));
 
         Positioned p3 = Positioned(
-            right: (width - radius * 8) / 3.0 + radius * 2,
+            right: radius * 3,
             child: Transform(
               transform: Matrix4.identity()..setTranslationRaw(x3, y3, 0),
               child: Container(
@@ -179,7 +176,7 @@ class _EasyDancingBall extends State<EasyDancingBall>
           width: width,
           height: width,
           margin: EdgeInsets.only(top: radius * 4),
-//          color: Colors.lightGreen,
+          // color: Colors.lightGreen,
           child: Stack(
             children: list,
           ),
@@ -191,7 +188,8 @@ class _EasyDancingBall extends State<EasyDancingBall>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController?.stop();
+    _animationController?.dispose();
     super.dispose();
   }
 }

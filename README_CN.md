@@ -55,7 +55,7 @@ EasyHub.showErrorHub('An error occurred');
 ///默认2秒消失
 EasyHub.showCompleteHub('done');
 
-/// 当你紧紧使用动画，那么请使用`EasyHub.dismiss()`来隐藏它。
+/// 当你仅仅使用动画，那么请使用`EasyHub.dismiss()`来隐藏它。
 EasyHub.showHub();
 
 ///隐藏

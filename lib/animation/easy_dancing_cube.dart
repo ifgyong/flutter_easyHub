@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyhub/flutter_easy_hub.dart';
 
 class EasyDancingCube extends StatefulWidget {
   final double radius; //矩形半径 view 宽度是小球的11倍
@@ -24,18 +25,17 @@ class _EasyDancingCube extends State<EasyDancingCube>
         vsync: this,
         duration: Duration(milliseconds: 1600),
         lowerBound: 0,
-        upperBound: 1.0)
+        upperBound: 0.9)
       ..addStatusListener((s) {
+        // return;
         if (s == AnimationStatus.completed) {
           _animationController.reset();
           _animationController.forward();
-          print(tag);
         } else if (s == AnimationStatus.dismissed) {
           tag = tag + 1;
           tag = tag % 4;
           _animationController.reset();
           _animationController.forward();
-          print(tag);
         }
       })
       ..forward();
@@ -47,8 +47,9 @@ class _EasyDancingCube extends State<EasyDancingCube>
 
   @override
   Widget build(BuildContext context) {
-    double radius = widget.radius == null ? 15 : widget.radius,
-        width = radius * 11;
+    double radius = widget.radius == null ? 11 : widget.radius;
+    double width = radius * 11;
+    double containWidth = radius * 2;
     Color color1 = Color.fromRGBO(53, 152, 192, 1.0);
     Color color2 = Color.fromRGBO(209, 64, 62, 1.0);
     Color color3 = Colors.orange;
@@ -61,7 +62,7 @@ class _EasyDancingCube extends State<EasyDancingCube>
       animation: _curvedAnimation,
       builder: (context, child) {
         List<Widget> list;
-        double v = _curvedAnimation.value;
+        double v = _animationController.value;
 //        tag = 3;
         switch (tag) {
           case 0:
@@ -94,31 +95,27 @@ class _EasyDancingCube extends State<EasyDancingCube>
 // 0-->0.5 前半生 0.25 最大
 // 0.5-->1 后半生 0.75 最小
 
-//        double v2 = _curvedAnimation.value;
-
         double maxRadiusJump = radius * 3;
-        double x1 = v * (width - radius * 2);
+        double x1 = v / 0.9 * (width - radius * 2);
 
         double x2 = -maxRadiusJump, y2 = 0;
         double x3 = 0, y3 = 0;
         double x4 = 0, y4 = 0;
-//        v = 0.0;
         double z1 = 0.0, z2 = 0.0, z3 = 0.0, z4 = 0.0;
-        if (v <= 0.33) {
-          x2 = -radius * 3 * v / 0.33;
-          y2 = -radius * 2 * sin(v / 0.33 * pi);
-          z1 = sin(v / 0.33 * pi) * pi / 2;
-          z2 = sin(v / 0.33 * pi) * pi / 2;
-        } else if (v <= 0.66) {
-          x3 = -radius * 3 * v / 0.33 + maxRadiusJump;
-          y3 = radius * 2 * sin(v / 0.33 * pi);
-          z3 = sin(v / 0.33 * pi) * pi / 2;
-        } else if (v <= 1) {
+        if (v <= 0.3) {
+          x2 = -radius * 3 * v / 0.3;
+          y2 = radius * 2.2 * sin((v + 0.3) / 0.3 * pi);
+          z1 = sin(v / 0.3 * pi) * pi / 2;
+          z2 = sin((v + 0.3) / 0.3 * pi) * pi / 2;
+        } else if (v <= 0.6) {
+          x3 = -radius * 3 * (v - 0.3) / 0.3;
+          y3 = radius * 2.2 * sin(v / 0.3 * pi);
+          z3 = sin((v) / 0.3 * pi) * pi / 2;
+        } else if (v <= 0.9) {
           x3 = -radius * 3;
-          z4 = sin((v - 0.66) / 0.33 * pi) * pi / 2;
-
-          x4 = -radius * 3 * (v - 0.66) / 0.33;
-          y4 = -radius * 4 * sin((v - 0.66) / 0.33 * pi);
+          z4 = sin((v - 0.3) / 0.3 * pi) * pi / 2;
+          x4 = -radius * 3 * (v - 0.6) / 0.3;
+          y4 = radius * 2.2 * sin((v - 0.3) / 0.3 * pi);
         }
 
         Positioned p1 = Positioned(
@@ -128,51 +125,58 @@ class _EasyDancingCube extends State<EasyDancingCube>
               transform: Matrix4.identity()
                 ..setTranslationRaw(x1, 0, 0)
                 ..rotateZ(z1),
+              alignment: Alignment.center,
               child: Container(
-                width: radius * 2,
-                height: radius * 2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                  child: Container(
+                width: containWidth,
+                height: containWidth,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                     color: color1,
                   ),
+                  // child: Text('1'),
                 ),
               ),
             ));
 
         Positioned p2 = Positioned(
-            left: (width - radius * 8) / 3.0 + radius * 2,
+            left: radius * 3,
             child: Transform(
               transform: Matrix4.identity()
                 ..setTranslationRaw(x2, y2, 0)
                 ..rotateZ(z2),
+              alignment: Alignment.center,
               child: Container(
-                width: radius * 2,
-                height: radius * 2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                  child: Container(
+                width: containWidth,
+                height: containWidth,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                     color: color2,
                   ),
+                  // child: Text('2'),
                 ),
               ),
             ));
 
         Positioned p3 = Positioned(
-            right: (width - radius * 8) / 3.0 + radius * 2,
+            right: radius * 3,
             child: Transform(
               transform: Matrix4.identity()
                 ..setTranslationRaw(x3, y3, 0)
                 ..rotateZ(z3),
+              alignment: Alignment.center,
               child: Container(
-                  width: radius * 2,
-                  height: radius * 2,
-                  child: ClipRRect(
+                width: containWidth,
+                height: containWidth,
+                child: Container(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
-                    child: Container(
-                      color: color3,
-                    ),
-                  )),
+                    color: color3,
+                  ),
+                  // child: Text('3'),
+                ),
+              ),
             ));
         Positioned p4 = Positioned(
             right: 0,
@@ -181,18 +185,25 @@ class _EasyDancingCube extends State<EasyDancingCube>
               transform: Matrix4.identity()
                 ..setTranslationRaw(x4, y4, 0)
                 ..rotateZ(z4),
+              alignment: Alignment.center,
               child: Container(
-                width: radius * 2,
-                height: radius * 2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                  child: Container(
+                width: containWidth,
+                height: containWidth,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                     color: color4,
                   ),
+                  // child: Text('4'),
                 ),
               ),
             ));
-        list = [p1, p2, p3, p4];
+        list = [
+          p1,
+          p2,
+          p3,
+          p4,
+        ];
         return Container(
           width: width,
           height: width,
@@ -208,6 +219,7 @@ class _EasyDancingCube extends State<EasyDancingCube>
 
   @override
   void dispose() {
+    _animationController?.stop();
     _animationController.dispose();
     super.dispose();
   }
