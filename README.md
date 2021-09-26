@@ -197,6 +197,18 @@ EasyHub.instance
   /// ```
   GestureTapCallback onTap;
 
+  /// display animation duration, default duration is [300ms]
+  Duration showHubDuration = Duration(milliseconds: 300);
+
+  /// hide animation duration, default duration is [300ms]
+  Duration hideHubDuration = Duration(milliseconds: 300);
+
+  /// display animation curve, default curve is [Curves.linear]
+  Curve showHubCurve = Curves.linear;
+
+  /// hide animation curve, default curve is [Curves.linear]
+
+  Curve hideHubCurve = Curves.linear;
 ```
 
  

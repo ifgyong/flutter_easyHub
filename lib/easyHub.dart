@@ -92,6 +92,19 @@ class EasyHub {
   /// ```
   GestureTapCallback onTap;
 
+  /// display animation duration, default duration is [300ms]
+  Duration showHubDuration = Duration(milliseconds: 300);
+
+  /// hide animation duration, default duration is [300ms]
+  Duration hideHubDuration = Duration(milliseconds: 300);
+
+  /// display animation curve, default curve is [Curves.linear]
+  Curve showHubCurve = Curves.linear;
+
+  /// hide animation curve, default curve is [Curves.linear]
+
+  Curve hideHubCurve = Curves.linear;
+
   factory EasyHub() => _getInstance();
 
   static EasyHub get instance => _getInstance();
@@ -301,6 +314,7 @@ class EasyHub {
     }
   }
 
+  GlobalKey<HubContainerState> _objectKey = GlobalKey();
   OverlayEntry _getEntry({
     Widget left,
     Widget center,
@@ -310,10 +324,15 @@ class EasyHub {
     return OverlayEntry(builder: (BuildContext con) {
       return GestureDetector(
         child: HubContainer(
+          key: _objectKey,
           center: center,
           left: left,
           right: right,
           bottom: bottom,
+          showHubCurve: showHubCurve,
+          showHubDuration: showHubDuration,
+          hideHubCurve: hideHubCurve,
+          hideHubDuration: hideHubDuration,
         ),
         onTap: EasyHub.instance.onTap,
       );
@@ -322,8 +341,10 @@ class EasyHub {
 
   void _clear() {
     if (_getInstance()._entry != null) {
-      _getInstance()._entry?.remove();
-      _getInstance()._entry = null;
+      _objectKey.currentState.pop(() {
+        _getInstance()._entry?.remove();
+        _getInstance()._entry = null;
+      });
     }
   }
 
