@@ -10,7 +10,7 @@ class HubContainer extends StatefulWidget {
   final Widget bottom;
 
   final Widget center;
-  bool show;
+  final bool show;
 
   /// display animation duration, default duration is [300ms]
   Duration showHubDuration = Duration(milliseconds: 300);
@@ -41,7 +41,15 @@ class HubContainer extends StatefulWidget {
 }
 
 class HubContainerState extends State<HubContainer> {
-  bool firstInsert = true;
+  bool firstInsert;
+  bool _show;
+  @override
+  void initState() {
+    _show = widget.show;
+    firstInsert = true;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -61,16 +69,15 @@ class HubContainerState extends State<HubContainer> {
     } else {
       op = 1.0;
     }
-    if (widget.show != true) {
+    if (_show != true) {
       op = 0.0;
     }
     if (EasyHub.instance.maskStyle != EasyHubMaskStyle.none) {
       p1 = Positioned.fill(
           child: AnimatedOpacity(
-        duration: widget.show == true
-            ? widget.showHubDuration
-            : widget.hideHubDuration,
-        curve: widget.show == true ? widget.showHubCurve : widget.hideHubCurve,
+        duration:
+            _show == true ? widget.showHubDuration : widget.hideHubDuration,
+        curve: _show == true ? widget.showHubCurve : widget.hideHubCurve,
         opacity: op,
         child: Container(
           color: EasyHubTheme.maskColor,
@@ -124,7 +131,7 @@ class HubContainerState extends State<HubContainer> {
   void pop(VoidCallback callback) {
     if (mounted) {
       setState(() {
-        widget.show = false;
+        _show = false;
       });
       Future.delayed(Duration(milliseconds: 300), () => callback());
     }

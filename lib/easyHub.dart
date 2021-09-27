@@ -299,13 +299,18 @@ class EasyHub {
         break;
     }
     _cancelTimer();
-    _getInstance()._clear();
+    _getInstance()._clearFast();
 
-    OverlayEntry overlayEntry =
-        _getEntry(center: centerWidget, bottom: bottomWidget);
+    _centerWidget = centerWidget;
+    _bottomWidget = bottomWidget;
 
-    Overlay.of(_getInstance().context).insert(overlayEntry);
-    _getInstance()._entry = overlayEntry;
+    if (_entry == null) {
+      OverlayEntry overlayEntry = _getEntry();
+      Overlay.of(_getInstance().context).insert(overlayEntry);
+      _getInstance()._entry = overlayEntry;
+    }
+    // ignore: invalid_use_of_visible_for_testing_member
+    _entry.markNeedsBuild();
     if (duration != null) {
       _getInstance()._timer = Timer.periodic(duration, (timer) {
         timer?.cancel();
@@ -314,6 +319,8 @@ class EasyHub {
     }
   }
 
+  Widget _centerWidget;
+  Widget _bottomWidget;
   GlobalKey<HubContainerState> _objectKey = GlobalKey();
   OverlayEntry _getEntry({
     Widget left,
@@ -325,10 +332,10 @@ class EasyHub {
       return GestureDetector(
         child: HubContainer(
           key: _objectKey,
-          center: center,
+          center: center ?? _centerWidget,
           left: left,
           right: right,
-          bottom: bottom,
+          bottom: bottom ?? _bottomWidget,
           showHubCurve: showHubCurve,
           showHubDuration: showHubDuration,
           hideHubCurve: hideHubCurve,
@@ -341,10 +348,18 @@ class EasyHub {
 
   void _clear() {
     if (_getInstance()._entry != null) {
+      _cancelTimer();
       _objectKey.currentState.pop(() {
         _getInstance()._entry?.remove();
         _getInstance()._entry = null;
       });
+    }
+  }
+
+  void _clearFast() {
+    if (_getInstance()._entry != null) {
+      _getInstance()._entry?.remove();
+      _getInstance()._entry = null;
     }
   }
 
